@@ -1,8 +1,9 @@
 {% macro translations_for(article) %}
 {% if article.translations %}
 <span class="label label-default">Lang</span>
+{% set langname = dict(zh='繁體中文', zhs="简体中文", jp='日本語', en='English') %}
 {% for translation in article.translations %}
-	<a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>
+	<a href="{{ SITEURL }}/{{ translation.url }}" class="btn btn-primary">{{ langname[translation.lang] }}</a>
 {% endfor %}
 {% endif %}
 {% endmacro %}
