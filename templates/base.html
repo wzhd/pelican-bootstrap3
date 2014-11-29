@@ -88,6 +88,8 @@
               title="{{ SITENAME }} RSS Feed"/>
     {% endif %}
 
+    <link href="{{ SITEURL }}/theme/css/material.min.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/css/ripples.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -192,5 +194,14 @@
 {% include 'includes/piwik.html' %}
 
 {% block scripts %}{% endblock %}
+
+<script src="{{ SITEURL }}/theme/js/ripples.min.js"></script>
+<script src="{{ SITEURL }}/theme/js/material.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $.material.init();
+    });
+</script>
+
 </body>
 </html>
