@@ -4,7 +4,7 @@
         {% for article in (articles_page.object_list if articles_page else articles) %}
             <article class="panel panel-primary">
                 <div class="panel-heading">
-                    <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+                    <a href="{{ SITEURL }}/{{ article.url }}" class="btn btn-primary btn-lg"><h2>{{ article.title }}</h2></a>
                     {% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
                         <div>
                             {% include "includes/article_info.html" %}

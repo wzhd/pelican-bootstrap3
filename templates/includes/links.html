@@ -3,16 +3,12 @@
     <div class="panel-heading">
         <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
     </div>
-    <div class="panel-body">
-      <ul class="list-group" id="links">
+    <div class="panel-body"  id="links">
         {% for name, link in LINKS %}
-        <li class="list-group-item">
-            <a href="{{ link }}" target="_blank">
+            <a href="{{ link }}" target="_blank" class="btn btn-default">
                 {{ name }}
             </a>
-        </li>
         {% endfor %}
-      </ul>
     </div>
 </div>
 {% endif %}
