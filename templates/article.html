@@ -72,12 +72,14 @@
         <article>
             <header class="page-header jumbotron jumbotron-primary panel-primary">
                     <div class="panel-heading">
+                        <h1>{{ article.title }}
                         <a href="{{ SITEURL }}/{{ article.url }}"
                            rel="bookmark"
                            class="btn btn-primary btn-lg"
                            title="Permalink to {{ article.title|striptags }}">
-                           <h1>{{ article.title }}</h1>
+                           <i class="mdi-action-launch"></i>
                         </a>
+                        </h1>
                         {% include "includes/article_info.html" %}
                     </div>
             </header>
