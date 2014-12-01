@@ -11,12 +11,12 @@
 
 {% block content %}
     <section id="content">
-        <h1>Archives for {{ SITENAME }}</h1>
+        <h1>Archives for {{ SITENAME }} <span class="badge"> {{ dates | count }}</span></h1>
         <div id="archives">
             {% for article in dates %}
                 <p>
                     <span class="categories-timestamp"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span>
-                    <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}{% if article.subtitle %} - {{ article.subtitle }}{% endif %}</a>
+                    <a href="{{ SITEURL }}/{{ article.url }}" class="btn btn-default">{{ article.title }}{% if article.subtitle %} - {{ article.subtitle }}{% endif %}</a>
                 </p>
             {% endfor %}
         </div>
