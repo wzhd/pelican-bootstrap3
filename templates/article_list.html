@@ -6,9 +6,9 @@
                 <div class="panel-heading">
                     <a href="{{ SITEURL }}/{{ article.url }}" class="btn btn-primary btn-lg"><h2>{{ article.title }}</h2></a>
                     {% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
-                        <div>
+                        <span>
                             {% include "includes/article_info.html" %}
-                        </div>
+                        </span>
                     {% endif %}
                 </div>
                 <div class="panel-body">
