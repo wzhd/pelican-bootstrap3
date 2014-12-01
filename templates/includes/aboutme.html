@@ -1,11 +1,11 @@
-<div id="aboutme">
-    {% if AVATAR %}
-        <p>
-            <img width="100%" class="img-thumbnail" src="{{ AVATAR }}"/>
-        </p>
-    {% endif %}
-    <p>
-        <strong>About {{ AUTHOR }}</strong><br/>
-        {{ ABOUT_ME }}
-    </p>
+<div class="panel panel-default">
+	<div class="panel-heading">
+        <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">About {{ AUTHOR }}</span></h4>
+    </div>
+    <div class="panel-body" id="aboutme">
+	    {% if AVATAR %}
+	        <img width="100%" src="{{ SITEURL }}/{{ AVATAR }}"/>
+	    {% endif %}
+	    {{ ABOUT_ME }}
+	</div>
 </div>
