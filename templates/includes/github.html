@@ -1,8 +1,8 @@
-{% if GITHUB_USER %}
-<div class="panel panel-default">
-    <div class="panel-heading">
-    	<h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
-    </div>
+{% extends "includes/sidebar_item.html" %}
+{% block sidebartitle %}
+<i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span>
+{% endblock sidebartitle %}
+{% block sidebarcontent %}
     <div class="panel-body">
         <div id="gh_repos">
             <p class="list-group-item">Status updating...</p>
@@ -11,5 +11,4 @@
             <a href="https://github.com/{{ GITHUB_USER }}">@{{ GITHUB_USER }}</a> on GitHub
         {% endif %}
     </div>
-</div>
-{% endif %}
+{% endblock sidebarcontent %}

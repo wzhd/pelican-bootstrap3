@@ -1,24 +1,24 @@
-{% if LINKS %}
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-    </div>
-    <div class="panel-body list-group"  id="links">
-        {% for name, link, avatar, desc in LINKS %}
-            <div class="list-group-item">
-                <div class="row-action-primary">
-                    <img src="{{avatar}}"/>
-                </div>
-                <div class="row-content">
-                    <div class="action-secondary"><i class="mdi-material-info"></i></div>
-                    <h4 class="list-group-item-heading">
-                        <a href="{{ link }}" target="_blank">{{name}}</a>
-                    </h4>
-                    <p class="list-group-item-text">{{ desc }}</p>
-                </div>
+{% extends "includes/sidebar_item.html" %}
+{% block sidebartitle %}
+<i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span>
+{% endblock sidebartitle %}
+
+{% block sidebarcontent %}
+<div class="panel-body list-group"  id="links">
+    {% for name, link, avatar, desc in LINKS %}
+        <div class="list-group-item">
+            <div class="row-action-primary">
+                <img src="{{avatar}}"/>
             </div>
-            <div class="list-group-separator"></div>
-        {% endfor %}
-    </div>
+            <div class="row-content">
+                <div class="action-secondary"><i class="mdi-material-info"></i></div>
+                <h4 class="list-group-item-heading">
+                    <a href="{{ link }}" target="_blank">{{name}}</a>
+                </h4>
+                <p class="list-group-item-text">{{ desc }}</p>
+            </div>
+        </div>
+        <div class="list-group-separator"></div>
+    {% endfor %}
 </div>
-{% endif %}
+{% endblock sidebarcontent %}

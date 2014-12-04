@@ -1,14 +1,12 @@
-{% if TWITTER_WIDGET_ID %}
-<div class="panel panel-default">
-    <div class="panel-heading">
-    	<h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4>
-    </div>
-    <div id="twitter_timeline">
-        <a class="twitter-timeline" data-chrome="noheader" href="https://twitter.com/{{ TWITTER_USERNAME }}" data-widget-id="{{TWITTER_WIDGET_ID}}">Tweets by {{TWITTER_USERNAME}}</a>
-    </div>
-</div>
+{% extends "includes/sidebar_item.html" %}
+{% block sidebartitle %}
+<i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span>
+{% endblock sidebartitle %}
 
-{% block scripts %}
+{% block sidebarcontent %}
+<div id="twitter_timeline">
+    <a class="twitter-timeline" data-chrome="noheader" href="https://twitter.com/{{ TWITTER_USERNAME }}" data-widget-id="{{TWITTER_WIDGET_ID}}">Tweets by {{TWITTER_USERNAME}}</a>
+</div>
 <script>
 var oldOnload = window.onload || function () {};
 window.onload = function ()
@@ -23,5 +21,6 @@ window.onload = function ()
 		fjs.parentNode.insertBefore(js,fjs);}
 }(document,"script","twitter-wjs");
 }</script>
-{% endblock %}
-{% endif %}
+{% endblock sidebarcontent %}
+
+

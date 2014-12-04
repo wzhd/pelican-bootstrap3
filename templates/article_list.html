@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
     {% if articles %}
+    <div class="row">
         {% for article in (articles_page.object_list if articles_page else articles) %}
+        <div class="col-md-12 col-lg-6">
             <article class="panel panel-primary">
                 <div class="panel-heading">
                     <a href="{{ SITEURL }}/{{ article.url }}" class="btn btn-primary btn-lg"><h2>{{ article.title }}</h2></a>
@@ -18,8 +20,9 @@
                     </div>
                 </div>
             </article>
-            
+        </div>
         {% endfor %}
+    </div>
     {% endif %}
 
     {% include 'includes/pagination.html' %}
