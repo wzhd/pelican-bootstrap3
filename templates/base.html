@@ -57,7 +57,11 @@
     {% include 'includes/twitter_cards.html' %}
 
     <!-- Bootstrap -->
-    <link href="{{ SITEURL }}/theme/bootstrap/bootstrap.less" rel="stylesheet/less" type="text/css">
+    {% if USE_LESS %}
+        <link href="{{ SITEURL }}/theme/bootstrap/bootstrap.less" rel="stylesheet/less" type="text/css">
+    {% else %}
+        <link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet">
+    {% endif %}
     
     <link href="{{ SITEURL }}/theme/css/font-awesome.min.css" rel="stylesheet">
 
@@ -85,8 +89,13 @@
               title="{{ SITENAME }} RSS Feed"/>
     {% endif %}
 
-    <link href="{{ SITEURL }}/theme/material/material.less" rel="stylesheet/less" type="text/css">
-    <link href="{{ SITEURL }}/theme/material/ripples.less" rel="stylesheet/less" type="text/css">
+    {% if USE_LESS %}
+        <link href="{{ SITEURL }}/theme/material/material.less" rel="stylesheet/less" type="text/css">
+        <link href="{{ SITEURL }}/theme/material/ripples.less" rel="stylesheet/less" type="text/css">
+    {% else %}
+        <link href="{{ SITEURL }}/theme/css/material.min.css" rel="stylesheet">
+        <link href="{{ SITEURL }}/theme/css/ripples.min.css" rel="stylesheet">
+    {% endif %}
 </head>
 <body>
 
