@@ -6,7 +6,10 @@
         <div class="col-md-12 col-lg-6">
             <article class="panel panel-primary">
                 <div class="panel-heading">
-                    <a href="{{ SITEURL }}/{{ article.url }}" class="btn btn-primary btn-lg"><h2>{{ article.title }}</h2></a>
+                    <a href="{{ SITEURL }}/{{ article.url }}" class="btn btn-primary btn-lg"><h2>{{ article.title }}
+                    </h2></a>
+                    {% import 'includes/translations.html' as translations with context %}
+                    {{ translations.translations_for(article) }}
                     {% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
                         <span>
                             {% include "includes/article_info.html" %}

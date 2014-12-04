@@ -60,9 +60,9 @@
         </header>
         <div class="entry-content jumbotron">
             {{ page.content }}
-
-            {% include 'includes/comments.html' %}
-
+            {% if page.comments == 'enabled' %}
+                {% include 'includes/comments.html' %}
+            {% endif %}
         </div>
     </section>
 {% endblock %}

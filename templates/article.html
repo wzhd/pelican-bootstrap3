@@ -79,6 +79,8 @@
                        title="Permalink to {{ article.title|striptags }}">
                        <i class="mdi-action-launch"></i>
                     </a>
+                    {% import 'includes/translations.html' as translations with context %}
+                    {{ translations.translations_for(article) }}
                     </h1>
                     {% include "includes/article_info.html" %}
                 </div>
