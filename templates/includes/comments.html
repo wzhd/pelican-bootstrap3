@@ -1,8 +1,6 @@
 {% if DISQUS_SITENAME %}
     <hr/>
     <section class="comments" id="comments">
-        <h2>Comments</h2>
-
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -15,13 +13,15 @@
                 var disqus_url = '{{ SITEURL }}/{{ article.url }}';
             {% elif page %}
                 {% if not DISQUS_NO_ID %}
-                    var disqus_identifier = 'page-{{ page.slug }}';
+                    var disqus_identifier = '{{ page.slug }}';
                 {% endif %}
                 var disqus_url = '{{ SITEURL }}/{{ page.url }}';
             {% endif %}
 
             var disqus_config = function () {
-                this.language = "{{ DEFAULT_LANG }}";
+                {% set langname = dict(zh='zh', zhs="zh", jp='ja', en='en') %}
+
+                this.language = "{{ langname[article.lang if article else DEFAULT_LANG] }}";
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
