@@ -57,11 +57,8 @@
     {% include 'includes/twitter_cards.html' %}
 
     <!-- Bootstrap -->
-    {% if BOOTSTRAP_THEME %}
-        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap.{{ BOOTSTRAP_THEME }}.min.css" type="text/css"/>
-    {% else %}
-        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap.min.css" type="text/css"/>
-    {% endif %}
+    <link href="{{ SITEURL }}/theme/bootstrap/bootstrap.less" rel="stylesheet/less" type="text/css">
+    
     <link href="{{ SITEURL }}/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="{{ SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet">
@@ -88,13 +85,13 @@
               title="{{ SITENAME }} RSS Feed"/>
     {% endif %}
 
-    <link href="{{ SITEURL }}/theme/less/material.less" rel="stylesheet/less" type="text/css">
-    <link href="{{ SITEURL }}/theme/less/ripples.less" rel="stylesheet/less" type="text/css">
+    <link href="{{ SITEURL }}/theme/material/material.less" rel="stylesheet/less" type="text/css">
+    <link href="{{ SITEURL }}/theme/material/ripples.less" rel="stylesheet/less" type="text/css">
 </head>
 <body>
 
 <div class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %} navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
+    <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -151,7 +148,7 @@
     {% block banner %}{% endblock %}
 {% endif %}
 <!-- End Banner -->
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-md-9 col-sm-8">
         {% block content %}

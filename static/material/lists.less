@@ -5,15 +5,15 @@
         overflow: hidden;
         border: 0;
         border-radius: 0;
-        padding: 0 16px;
+        // padding: 0 16px;
         .row-picture, .row-action-primary {
             float: left;
             display: inline-block;
             padding-right: 16px;
             img, i, label {
                 display: block;
-                width: 56px;
-                height: 56px;
+                width: 32px;
+                height: 32px;
             }
             img {
                 background: rgba(0,0,0,0.1);
@@ -26,7 +26,7 @@
                 background: rgba(0,0,0,0.25);
                 border-radius: 100%;
                 text-align: center;
-                line-height: 56px;
+                line-height: 32px;
                 font-size: 20px;
                 color: white;
             }
@@ -39,12 +39,12 @@
         }
         .row-content {
             display: inline-block;
-            width: ~"calc(100% - 92px)";
-            min-height: 66px;
+            width: ~"calc(100% - 56px)";
+            // min-height: 66px;
             .action-secondary {
                 position: absolute;
-                right: 16px;
-                top: 16px;
+                // right: 16px;
+                // top: 16px;
                 i {
                     font-size: 20px;
                     color: rgba(0,0,0,0.25);
@@ -56,7 +56,7 @@
             }
             .least-content {
                 position: absolute;
-                right: 16px;
+                // right: 16px;
                 top: 0px;
                 color: rgba(0,0,0,0.54);
                 font-size: 14px;
@@ -81,11 +81,10 @@
     .list-group-separator {
         clear: both;
         overflow: hidden;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
         &:before {
             content: "";
-            width: ~"calc(100% - 90px)";
             border-bottom: 1px solid rgba(0,0,0,0.1);
             float: right;
         }
