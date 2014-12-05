@@ -48,9 +48,16 @@
     <section id="content" class="body">
         <header class="page-header jumbotron jumbotron-primary panel-primary">
             <div class="panel-heading">
-                <h1 class="entry-title">{{ page.title }}
-                {% import 'includes/translations.html' as translations with context %}
-                {{ translations.translations_for(page) }}
+                <h1 class="entry-title">
+                <div class="row">
+                    <div class="col-lg-10 col-md-9">
+                        {{ page.title }}
+                    </div>
+                    <div class="col-lg-2 col-md-3">
+                        {% import 'includes/translations.html' as translations with context %}
+                        {{ translations.translations_for(page) }}
+                    </div>
+                </div>
                 </h1>
                 {% if PDF_PROCESSOR %}
                     <a href="{{ SITEURL }}/pdf/{{ page.slug }}.pdf">

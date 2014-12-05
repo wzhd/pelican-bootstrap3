@@ -4,7 +4,9 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml"{% endif %}>
 <head>
-    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    <title>{% macro title() -%}
+    {% block title %}{{ SITENAME }}{% endblock %}
+    {%- endmacro %}{{title()}}</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -98,6 +100,7 @@
     {% endif %}
 </head>
 <body>
+<div style="display:none" id="title">{{ title() }}</div>
 
 <div class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %} navbar-fixed-top" role="navigation">
     <div class="container">
@@ -160,15 +163,14 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-10 col-md-9 col-sm-8">
+        {% block breadcrumbs %}
+        {% endblock %}
         {% block content %}
         {% endblock %}
         </div>
         {% if not HIDE_SIDEBAR or ABOUT_ME %}
         <div class="col-lg-2 col-md-3 col-sm-4" id="sidebar">
             <aside>
-            {% block breadcrumbs %}
-            {% endblock %}
-
             {% if not HIDE_SIDEBAR %}
                 {% include 'includes/sidebar.html' %}
             {% endif %}
@@ -204,8 +206,65 @@
 <script>
     $(document).ready(function() {
         $.material.init();
-    });
 
+        function applyTranslateAnime(){
+            $(".article-content .translate").each(function(idx, obj){
+                $(obj).attr("data-href", $(obj).attr("href"));
+                $(obj).attr("href", "javascript:void(0)");
+                $(obj).click(function(){
+                    var href = $(obj).attr("data-href");
+                    $('.breadcrumb').fadeOut("slow");
+                    $('.article-content').fadeOut("slow",function(){
+                        $.get(href, function(data){
+                            var el = new DOMParser().parseFromString(data, 'text/html');
+                            var title = $("#title", el)[0].innerHTML;
+                            var content = $(".article-content", el)[0].innerHTML;
+                            var breadcrumb = $(".breadcrumb", el)[0].innerHTML;
+
+                            document.title = title;
+                            window.history.pushState({
+                                "content": content ,
+                                "title":title ,
+                                "breadcrumb":breadcrumb
+                            },"", href);
+                            $('.article-content')[0].innerHTML = content;
+                            $('.breadcrumb')[0].innerHTML = breadcrumb;
+                            $('.article-content').fadeIn('slow');
+                            $('.breadcrumb').fadeIn('slow');
+                            $("#comments script", el).each(function(idx, obj){
+                                // re-enable disqus
+                                eval(obj.innerHTML);
+                            });
+                            applyTranslateAnime();
+                        }).fail(function(){
+                            // failback to changing url
+                            window.location.href = href ;
+                        });
+                    });
+                });
+            });
+        };
+        applyTranslateAnime();
+
+        window.onpopstate = function(e){
+            if(e.state){
+                
+                document.title = e.state.title;
+                $('.breadcrumb').fadeOut("slow");
+                $('.article-content').fadeOut("slow",function(){
+                    $('.article-content')[0].innerHTML = e.state.content;
+                    $('.breadcrumb')[0].innerHTML = e.state.breadcrumb;
+                    $('.article-content').fadeIn('slow');
+                    $('.breadcrumb').fadeIn('slow');
+                    $("#comments script").each(function(idx, obj){
+                        // re-enable disqus
+                        eval(obj.innerHTML);
+                    });
+                    applyTranslateAnime();
+                });
+            }
+        }
+    });
 </script>
 
 </body>

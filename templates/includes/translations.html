@@ -9,7 +9,7 @@
 </a>
 <ul class="dropdown-menu">
 {% for translation in article.translations %}
-	<li><a href="{{ SITEURL }}/{{ translation.url }}">{{ langname[translation.lang] }}</a></li>
+	<li><a href="{{ SITEURL }}/{{ translation.url }}" class="translate">{{ langname[translation.lang] }}</a></li>
 {% endfor %}
 </ul>
 </div>
