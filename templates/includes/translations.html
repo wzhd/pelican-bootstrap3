@@ -1,7 +1,7 @@
 {% macro translations_for(article) %}
 {% if article.translations %}
-<div class="btn-group">
-{% set langname = dict(zh='繁體中文', zhs="简体中文", jp='日本語', en='English') %}
+<div class="btn-group translations">
+{% set langname = dict(zh='繁體', zhs="简体", jp='日本語', en='English') %}
 <a href="javascript:void(0)" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 <i class="mdi-action-translate"></i>
 {{ langname[article.lang] }}

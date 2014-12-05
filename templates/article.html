@@ -72,22 +72,28 @@
         <article>
             <header class="page-header jumbotron jumbotron-primary panel-primary">
                 <div class="panel-heading">
-                    <h1>{{ article.title }}
-                    <a href="{{ SITEURL }}/{{ article.url }}"
-                       rel="bookmark"
-                       class="btn btn-primary btn-lg"
-                       title="Permalink to {{ article.title|striptags }}">
-                       <i class="mdi-action-launch"></i>
-                    </a>
-                    {% import 'includes/translations.html' as translations with context %}
-                    {{ translations.translations_for(article) }}
+                    <h1>
+                    <div class="row">
+                        <div class="col-lg-10 col-md-9">
+                            {{ article.title }}
+                            <a href="{{ SITEURL }}/{{ article.url }}"
+                               rel="bookmark"
+                               class="btn btn-primary btn-lg"
+                               title="Permalink to {{ article.title|striptags }}">
+                               <i class="mdi-action-launch"></i>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-3">
+                            {% import 'includes/translations.html' as translations with context %}
+                            {{ translations.translations_for(article) }}
+                        </div>
+                    </div>
                     </h1>
                     {% include "includes/article_info.html" %}
                 </div>
             </header>
 
-            <div class="entry-content jumbotron">
-                    
+            <div class="entry-content jumbotron" id="article-content">
                 {{ article.content }}
             </div>
             <!-- /.entry-content -->
