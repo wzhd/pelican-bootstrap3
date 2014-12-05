@@ -96,6 +96,27 @@
             <div class="entry-content jumbotron" id="article-content">
                 {{ article.content }}
             </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    {% if article.prev_article %}
+                    <a href="{{ SITEURL }}/{{article.prev_article.url}}" class="btn btn-default btn-lg" ><h4 style="float:right;clear:both">
+                        <i class="fa fa-arrow-left"></i>
+                        {{article.prev_article.title}}
+                        </h4>
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    {% if article.next_article %}
+                    <a href="{{ SITEURL }}/{{article.next_article.url}}" class="btn btn-default btn-lg" ><h4 style="float:left;clear:both">
+                        {{article.next_article.title}}
+                        <i class="fa fa-arrow-right"></i>
+                        </h4>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
             <!-- /.entry-content -->
             {% include 'includes/related-posts.html' %}
             {% include 'includes/addthis.html' %}
