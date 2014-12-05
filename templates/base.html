@@ -163,10 +163,12 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-10 col-md-9 col-sm-8">
-        {% block breadcrumbs %}
-        {% endblock %}
-        {% block content %}
-        {% endblock %}
+            <div id="loading-block">
+            {% block breadcrumbs %}
+            {% endblock %}
+            {% block content %}
+            {% endblock %}
+            </div>
         </div>
         {% if not HIDE_SIDEBAR or ABOUT_ME %}
         <div class="col-lg-2 col-md-3 col-sm-4" id="sidebar">
@@ -204,66 +206,155 @@
 <script src="{{ SITEURL }}/theme/js/ripples.min.js"></script>
 <script src="{{ SITEURL }}/theme/js/material.min.js"></script>
 <script>
+    function linkto(){
+
+    }
+
+    function htmlDecode(value){
+      return $('<div/>').html(value).text();
+    }
+
+    function evalScript(data, context){
+        var re = /<script\b[^>]*>([\s\S]*?)<\/script>/gm;
+        var match;
+        while (match = re.exec(data)) {
+          // full match is in match[0], whereas captured groups are in ...[1], ...[2], etc.
+          console.log(match[0]);
+          context.append(match[0]);
+        }
+    }
+
     $(document).ready(function() {
         $.material.init();
 
-        function applyTranslateAnime(){
-            $(".article-content .translate").each(function(idx, obj){
+        // function applyTranslateAnime(){
+        //     $(".article-content .translate").each(function(idx, obj){
+        //         $(obj).attr("data-href", $(obj).attr("href"));
+        //         $(obj).attr("href", "javascript:void(0)");
+        //         $(obj).click(function(){
+        //             var href = $(obj).attr("data-href");
+        //             $('.breadcrumb').fadeOut("slow");
+        //             $('.article-content').fadeOut("slow",function(){
+        //                 $.get(href, function(data){
+        //                     var el = new DOMParser().parseFromString(data, 'text/html');
+        //                     var title = $("#title", el)[0].innerHTML;
+        //                     var content = $(".article-content", el)[0].innerHTML;
+        //                     var breadcrumb = $(".breadcrumb", el)[0].innerHTML;
+
+        //                     document.title = title;
+        //                     window.history.pushState({
+        //                         "content": content ,
+        //                         "title":title ,
+        //                         "breadcrumb":breadcrumb
+        //                     },"", href);
+        //                     $('.article-content')[0].innerHTML = content;
+        //                     $('.breadcrumb')[0].innerHTML = breadcrumb;
+        //                     $('.article-content').fadeIn('slow');
+        //                     $('.breadcrumb').fadeIn('slow');
+        //                     $("#comments script", el).each(function(idx, obj){
+        //                         // re-enable disqus
+        //                         eval(obj.innerHTML);
+        //                     });
+        //                     applyTranslateAnime();
+        //                 }).fail(function(){
+        //                     // failback to changing url
+        //                     window.location.href = href ;
+        //                 });
+        //             });
+        //         });
+        //     });
+        // };
+        // applyTranslateAnime();
+
+        // window.onpopstate = function(e){
+        //     if(e.state){
+                
+        //         document.title = e.state.title;
+        //         $('.breadcrumb').fadeOut("slow");
+        //         $('.article-content').fadeOut("slow",function(){
+        //             $('.article-content')[0].innerHTML = e.state.content;
+        //             $('.breadcrumb')[0].innerHTML = e.state.breadcrumb;
+        //             $('.article-content').fadeIn('slow');
+        //             $('.breadcrumb').fadeIn('slow');
+        //             $("#comments script").each(function(idx, obj){
+        //                 // re-enable disqus
+        //                 eval(obj.innerHTML);
+        //             });
+        //             applyTranslateAnime();
+        //         });
+        //     }
+        // }
+        
+        
+
+        if (typeof String.prototype.startsWith != 'function') {
+          // see below for better implementation!
+          String.prototype.startsWith = function (str){
+            return this.indexOf(str) == 0;
+          };
+        }
+        if (typeof String.prototype.endsWith != 'function') {
+            String.prototype.endsWith = function(suffix) {
+                return this.indexOf(suffix, this.length - suffix.length) !== -1;
+            };
+        }
+        function applyAjaxAnime(){
+            
+            function applyAjaxAnimeOn(idx, obj){
+                var href = $(obj).attr("href");
+                if(href.startsWith("java") || 
+                    href.startsWith("http")||
+                    ! href.endsWith(".html")){
+                    return;
+                }
+
                 $(obj).attr("data-href", $(obj).attr("href"));
-                $(obj).attr("href", "javascript:void(0)");
+                $(obj).attr("href", "javascript: linkto('" + href+"')");
                 $(obj).click(function(){
                     var href = $(obj).attr("data-href");
-                    $('.breadcrumb').fadeOut("slow");
-                    $('.article-content').fadeOut("slow",function(){
+                    $('#loading-block').fadeOut("slow",function(){
                         $.get(href, function(data){
                             var el = new DOMParser().parseFromString(data, 'text/html');
-                            var title = $("#title", el)[0].innerHTML;
-                            var content = $(".article-content", el)[0].innerHTML;
-                            var breadcrumb = $(".breadcrumb", el)[0].innerHTML;
 
-                            document.title = title;
+                            var title = $("#title", el)[0].innerHTML;
+                            var content = $("#loading-block", el)[0].innerHTML;
+                            
+                            document.title = htmlDecode(title);
                             window.history.pushState({
                                 "content": content ,
-                                "title":title ,
-                                "breadcrumb":breadcrumb
+                                "title":title,
+                                "data":data
                             },"", href);
-                            $('.article-content')[0].innerHTML = content;
-                            $('.breadcrumb')[0].innerHTML = breadcrumb;
-                            $('.article-content').fadeIn('slow');
-                            $('.breadcrumb').fadeIn('slow');
-                            $("#comments script", el).each(function(idx, obj){
-                                // re-enable disqus
-                                eval(obj.innerHTML);
-                            });
-                            applyTranslateAnime();
+                            $('#loading-block')[0].innerHTML = content;
+                            $('#loading-block').fadeIn('slow');
+
+                            evalScript(data, $('#loading-block'));
+                            applyAjaxAnime();
                         }).fail(function(){
                             // failback to changing url
                             window.location.href = href ;
                         });
                     });
                 });
-            });
+            }
+
+            $("a").each(applyAjaxAnimeOn);
         };
-        applyTranslateAnime();
+        applyAjaxAnime();
 
         window.onpopstate = function(e){
             if(e.state){
                 
-                document.title = e.state.title;
-                $('.breadcrumb').fadeOut("slow");
-                $('.article-content').fadeOut("slow",function(){
-                    $('.article-content')[0].innerHTML = e.state.content;
-                    $('.breadcrumb')[0].innerHTML = e.state.breadcrumb;
-                    $('.article-content').fadeIn('slow');
-                    $('.breadcrumb').fadeIn('slow');
-                    $("#comments script").each(function(idx, obj){
-                        // re-enable disqus
-                        eval(obj.innerHTML);
-                    });
-                    applyTranslateAnime();
+                document.title = htmlDecode(title);
+                $('#loading-block').fadeOut("slow",function(){
+                    $('#loading-block')[0].innerHTML = e.state.content;
+                    $('#loading-block').fadeIn('slow');
+                    evalScript(e.state.data, $('#loading-block'));
+                    applyAjaxAnime();
                 });
             }
         }
+        
     });
 </script>
 
