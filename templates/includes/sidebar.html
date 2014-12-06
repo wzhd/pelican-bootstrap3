@@ -59,6 +59,10 @@
         {% include 'includes/sidebar_tags.html' %}
         {% endif %}
 
+        {% if LINKS %}
+        {% include 'includes/links.html' %}
+        {% endif %}
+
         {% if GITHUB_USER %}
         {% include 'includes/github.html' %}
         {% endif %}
@@ -71,9 +75,7 @@
         {% include 'includes/twitter_timeline.html' %}
         {% endif %}
 
-        {% if LINKS %}
-        {% include 'includes/links.html' %}
-        {% endif %}
+
     </div>
 </section>
 

@@ -97,21 +97,36 @@
                 {{ article.content }}
             </div>
 
+            {% if article.series %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                <h4>
+                This is part {{ article.series.index }} of the "{{ article.series.name }}" series:
+                </h4>
+                </div>
+                <div class="btn-group-vertical btn-group-flat" style="width:100%">
+                    {% for part_article in article.series.all %}
+                        <a class="btn btn-{% if part_article == article %}primary{%else%}default{% endif %}" href='{{ SITEURL }}/{{ part_article.url }}' style="text-align:left">{{ part_article.title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-xs-6">
                     {% if article.prev_article %}
-                    <a href="{{ SITEURL }}/{{article.prev_article.url}}" class="btn btn-default btn-lg" style="float:right;clear:both"><h4 >
-                        <i class="fa fa-arrow-left"></i>
+                    <a href="{{ SITEURL }}/{{article.prev_article.url}}" class="btn btn-default btn-lg" style="float:right;clear:both">
+                        <h4><i class="fa fa-arrow-left"></i>
                         {{article.prev_article.title}}
                         </h4>
                     </a>
                     {% endif %}
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                     {% if article.next_article %}
-                    <a href="{{ SITEURL }}/{{article.next_article.url}}" class="btn btn-default btn-lg" style="float:left;clear:both"><h4 >
-                        {{article.next_article.title}}
-                        <i class="fa fa-arrow-right"></i>
+                    <a href="{{ SITEURL }}/{{article.next_article.url}}" class="btn btn-default btn-lg" style="float:left;clear:both">
+                        <h4>
+                        {{article.next_article.title}}<i class="fa fa-arrow-right"></i>
                         </h4>
                     </a>
                     {% endif %}
