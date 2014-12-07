@@ -73,23 +73,25 @@
             <header class="page-header jumbotron jumbotron-primary panel-primary">
                 <div class="panel-heading">
                     <h1>
+                        {{ article.title }}
+                        <a href="{{ SITEURL }}/{{ article.url }}"
+                           rel="bookmark"
+                           class="btn btn-primary btn-lg"
+                           title="Permalink to {{ article.title|striptags }}">
+                           <i class="mdi-action-launch"></i>
+                        </a>
+                    </h1>
+                </div>
+                <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-10 col-md-9">
-                            {{ article.title }}
-                            <a href="{{ SITEURL }}/{{ article.url }}"
-                               rel="bookmark"
-                               class="btn btn-primary btn-lg"
-                               title="Permalink to {{ article.title|striptags }}">
-                               <i class="mdi-action-launch"></i>
-                            </a>
+                        <div class="col-lg-10 col-md-9 col-sm-7 col-xs-6">
+                            {% include "includes/article_info.html" %}
                         </div>
-                        <div class="col-lg-2 col-md-3">
+                        <div class="col-lg-2 col-md-3 col-sm-5 col-xs-6">
                             {% import 'includes/translations.html' as translations with context %}
                             {{ translations.translations_for(article) }}
                         </div>
                     </div>
-                    </h1>
-                    {% include "includes/article_info.html" %}
                 </div>
             </header>
 
@@ -110,7 +112,7 @@
                     {% endfor %}
                 </div>
             </div>
-        {% endif %}
+            {% endif %}
 
             <div class="row">
                 <div class="col-xs-6">

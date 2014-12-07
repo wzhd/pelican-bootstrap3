@@ -205,6 +205,7 @@
 {% endif %}
 <script src="{{ SITEURL }}/theme/js/ripples.min.js"></script>
 <script src="{{ SITEURL }}/theme/js/material.min.js"></script>
+<script src="{{ SITEURL }}/theme/js/jquery.bootstrap-autohidingnavbar.min.js"></script>
 <script>
     function linkto(){
 
@@ -225,6 +226,7 @@
 
     $(document).ready(function() {
         $.material.init();
+        $("div.navbar").autoHidingNavbar();
 
         function applyTranslateAnime(){
             $(".article-content .translate").each(function(idx, obj){
