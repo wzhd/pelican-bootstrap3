@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock %}"
+<html lang="{% block html_lang %}{{ LOCALE[0].split('.')[0] }}{% endblock %}"
       {% if USE_OPEN_GRAPH %}
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml"{% endif %}>
@@ -61,24 +61,24 @@
 
     <!-- Bootstrap -->
     {% if USE_LESS %}
-        <link href="{{ SITEURL }}/theme/bootstrap/bootstrap.less" rel="stylesheet/less" type="text/css">
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/bootstrap/bootstrap.less" rel="stylesheet/less" type="text/css">
     {% else %}
-        <link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.min.css" rel="stylesheet">
     {% endif %}
     
-    <link href="{{ SITEURL }}/theme/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="{{ SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet">
     {% if 'tipue_search' in PLUGINS %}
-    <link href="{{ SITEURL}}/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link href="{{ SITEURL}}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.css" rel="stylesheet">
     {% endif %}
     {% if DOCUTIL_CSS %}
-        <link href="{{ SITEURL }}/theme/css/html4css1.css" rel="stylesheet">
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/html4css1.css" rel="stylesheet">
     {% endif %}
     {% if TYPOGRIFY %}
-        <link href="{{ SITEURL }}/theme/css/typogrify.css" rel="stylesheet">
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/typogrify.css" rel="stylesheet">
     {% endif %}
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" type="text/css"/>
     {% if CUSTOM_CSS %}
         <link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet">
     {% endif %}
@@ -93,11 +93,11 @@
     {% endif %}
 
     {% if USE_LESS %}
-        <link href="{{ SITEURL }}/theme/material/material.less" rel="stylesheet/less" type="text/css">
-        <link href="{{ SITEURL }}/theme/material/ripples.less" rel="stylesheet/less" type="text/css">
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/material/material.less" rel="stylesheet/less" type="text/css">
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/material/ripples.less" rel="stylesheet/less" type="text/css">
     {% else %}
-        <link href="{{ SITEURL }}/theme/css/material.min.css" rel="stylesheet">
-        <link href="{{ SITEURL }}/theme/css/ripples.min.css" rel="stylesheet">
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/material.min.css" rel="stylesheet">
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/ripples.min.css" rel="stylesheet">
     {% endif %}
 </head>
 <body>
@@ -122,12 +122,30 @@
                 {% for title, link in MENUITEMS %}
                     <li><a href="{{ link }}">{{ title }}</a></li>
                 {% endfor %}
+
+                {% if extra_siteurls %}
+                    {% set langname = dict(zh='繁體', zc="简体", jp='日本語', en='English') %}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+                            <i class="mdi-action-translate"></i><span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            {% for lang, url in extra_siteurls.items() %}
+                            <li><a href="{{ url }}/">{{ langname[lang] }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <!-- separator -->
+                    <li>&nbsp;</li>
+                {% endif %}
+
                 {% if DISPLAY_PAGES_ON_MENU %}
                     {% for p in PAGES %}
-                         <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">
-                             {{ p.menulabel|default(p.title) }}
-                          </a></li>
-                      {% endfor %}
+                     <li class="hidden-sm {% if p == page %} active{% endif %}"><a href="{{ SITEURL }}/{{ p.url }}">
+                         {{ p.menulabel|default(p.title) }}
+                      </a></li>
+                  {% endfor %}
+                  <li>&nbsp;</li>
                 {% endif %}
                 {% if DISPLAY_CATEGORIES_ON_MENU %}
                     {% for cat, null in categories %}
@@ -184,16 +202,16 @@
 </div>
 {% include 'includes/footer.html' %}
 
-<script src="{{ SITEURL }}/theme/js/jquery.min.js"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{{ SITEURL }}/theme/js/bootstrap.min.js"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="{{ SITEURL }}/theme/js/respond.min.js"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/respond.min.js"></script>
 
 {% if BANNER %}
-    <script src="{{ SITEURL }}/theme/js/bodypadding.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/bodypadding.js"></script>
 {% endif %}
 {% include 'includes/github-js.html' %}
 {% include 'includes/disqus_script.html' %}
@@ -202,11 +220,11 @@
 
 {% block scripts %}{% endblock %}
 {% if USE_LESS %}
-<script src="{{ SITEURL }}/theme/js/less.min.js" type="text/javascript"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/less.min.js" type="text/javascript"></script>
 {% endif %}
-<script src="{{ SITEURL }}/theme/js/ripples.min.js"></script>
-<script src="{{ SITEURL }}/theme/js/material.min.js"></script>
-<script src="{{ SITEURL }}/theme/js/jquery.bootstrap-autohidingnavbar.min.js"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/ripples.min.js"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/material.min.js"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.bootstrap-autohidingnavbar.min.js"></script>
 <script>
     function linkto(){
 

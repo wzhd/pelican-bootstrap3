@@ -1,12 +1,15 @@
 {% extends "includes/sidebar_item.html" %}
 {% block sidebartitle %}
-<i class="fa fa-home fa-lg"></i><span class="icon-label">About {{ AUTHOR }}</span>
+<i class="fa fa-home fa-lg"></i>
+<a href="{{ SITEURL }}/{{ ABOUT_PAGE }}">
+About {{ AUTHOR }}
+</a>
 {% endblock sidebartitle %}
 
 {% block sidebarcontent %}
 <div class="panel-body" id="aboutme">
     {% if AVATAR %}
-        <img width="100%" src="{{ SITEURL }}/{{ AVATAR }}"/>
+        <a href="{{ SITEURL }}/{{ ABOUT_PAGE }}"><img width="100%" src="{{ SITEURL }}/../{{ AVATAR }}"/></a>
     {% endif %}
     {{ ABOUT_ME }}
 </div>
