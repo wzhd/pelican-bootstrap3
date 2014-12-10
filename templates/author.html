@@ -1,6 +1,6 @@
 {% extends "article_list.html" %}
 
-{% block title %}Articles by {{ author }} - {{ SITENAME }}{% endblock %}
+{% block title %}{% trans %}Articles by {{ author }} - {{ SITENAME }}{% endtrans %}{% endblock %}
 
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}

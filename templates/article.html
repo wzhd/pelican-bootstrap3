@@ -103,7 +103,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                 <h4>
-                This is part {{ article.series.index }} of the "{{ article.series.name }}" series:
+                {% trans index=article.series.index, name=article.series.name %}This is part {{ index }} of the "{{ name }}" series:{% endtrans %}
                 </h4>
                 </div>
                 <div class="btn-group-vertical btn-group-flat" style="width:100%">

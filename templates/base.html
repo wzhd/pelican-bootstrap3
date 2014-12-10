@@ -107,7 +107,7 @@
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only">{{ gettext('Toggle navigation') }}</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -157,13 +157,13 @@
             {% if 'tipue_search' in PLUGINS %}
               <li><span>
                 <form class="navbar-search" action="/search.html">
-                  <input type="text" class="search-query form-control col-lg-8" placeholder="Search" name="q" id="tipue_search_input" required>
+                  <input type="text" class="search-query form-control col-lg-8" placeholder="{% trans %}Search{% endtrans %}" name="q" id="tipue_search_input" required>
                 </form></span>
               </li>
             {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right hidden-sm">
-              <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i><span class="icon-label">All</span></a></li>
+              <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i><span class="icon-label">{{ gettext('All') }}</span></a></li>
               <li><a href="{{ SITEURL }}/{{ FEED_ALL_URL | default('feeds/all.atom.xml') }}" title="Atom feeds for all articles"><i class="fa fa-rss"></i></a></li>
             </ul>
         </div>
@@ -224,155 +224,9 @@
 <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/material.min.js"></script>
 <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.bootstrap-autohidingnavbar.min.js"></script>
 <script>
-    function linkto(){
-
-    }
-
-    function htmlDecode(value){
-      return $('<div/>').html(value).text();
-    }
-
-    function evalScript(data, context){
-        var re = /<script\b[^>]*>([\s\S]*?)<\/script>/gm;
-        var match;
-        while (match = re.exec(data)) {
-          // full match is in match[0], whereas captured groups are in ...[1], ...[2], etc.
-          context.append(match[0]);
-        }
-    }
-
     $(document).ready(function() {
         $.material.init();
         $("div.navbar").autoHidingNavbar();
-
-        // function applyTranslateAnime(){
-        //     $(".article-content .translate").each(function(idx, obj){
-        //         $(obj).attr("data-href", $(obj).attr("href"));
-        //         $(obj).attr("href", "javascript:void(0)");
-        //         $(obj).click(function(){
-        //             var href = $(obj).attr("data-href");
-        //             $('.breadcrumb').fadeOut("slow");
-        //             $('.article-content').fadeOut("slow",function(){
-        //                 $.get(href, function(data){
-        //                     var el = new DOMParser().parseFromString(data, 'text/html');
-        //                     var title = $("#title", el)[0].innerHTML;
-        //                     var content = $(".article-content", el)[0].innerHTML;
-        //                     var breadcrumb = $(".breadcrumb", el)[0].innerHTML;
-
-        //                     document.title = htmlDecode(title);
-        //                     window.history.pushState({
-        //                         "content": content ,
-        //                         "title":title ,
-        //                         "breadcrumb":breadcrumb
-        //                     },"", href);
-        //                     $('.article-content')[0].innerHTML = content;
-        //                     $('.breadcrumb')[0].innerHTML = breadcrumb;
-        //                     $('.article-content').fadeIn('slow');
-        //                     $('.breadcrumb').fadeIn('slow');
-        //                     $("#comments script", el).each(function(idx, obj){
-        //                         // re-enable disqus
-        //                         eval(obj.innerHTML);
-        //                     });
-        //                     applyTranslateAnime();
-        //                 }).fail(function(){
-        //                     // failback to changing url
-        //                     window.location.href = href ;
-        //                 });
-        //             });
-        //         });
-        //     });
-        // };
-        // applyTranslateAnime();
-
-        // window.onpopstate = function(e){
-        //     if(e.state){
-                
-        //         document.title = htmlDecode(e.state.title);
-        //         $('.breadcrumb').fadeOut("slow");
-        //         $('.article-content').fadeOut("slow",function(){
-        //             $('.article-content')[0].innerHTML = e.state.content;
-        //             $('.breadcrumb')[0].innerHTML = e.state.breadcrumb;
-        //             $('.article-content').fadeIn('slow');
-        //             $('.breadcrumb').fadeIn('slow');
-        //             $("#comments script").each(function(idx, obj){
-        //                 // re-enable disqus
-        //                 eval(obj.innerHTML);
-        //             });
-        //             applyTranslateAnime();
-        //         });
-        //     }
-        // }
-        
-        
-
-        // if (typeof String.prototype.startsWith != 'function') {
-        //   // see below for better implementation!
-        //   String.prototype.startsWith = function (str){
-        //     return this.indexOf(str) == 0;
-        //   };
-        // }
-        // if (typeof String.prototype.endsWith != 'function') {
-        //     String.prototype.endsWith = function(suffix) {
-        //         return this.indexOf(suffix, this.length - suffix.length) !== -1;
-        //     };
-        // }
-        // function applyAjaxAnime(){
-            
-        //     function applyAjaxAnimeOn(idx, obj){
-        //         var href = $(obj).attr("href");
-        //         if(href.startsWith("java") || 
-        //             href.startsWith("http")||
-        //             ! href.endsWith(".html")){
-        //             return;
-        //         }
-
-        //         $(obj).attr("data-href", $(obj).attr("href"));
-        //         $(obj).attr("href", "javascript: linkto('" + href+"')");
-        //         $(obj).click(function(){
-        //             var href = $(obj).attr("data-href");
-        //             $('#loading-block').fadeOut("slow",function(){
-        //                 $.get(href, function(data){
-        //                     var el = new DOMParser().parseFromString(data, 'text/html');
-
-        //                     var title = $("#title", el)[0].innerHTML;
-        //                     var content = $("#loading-block", el)[0].innerHTML;
-                            
-        //                     document.title = htmlDecode(title);
-        //                     window.history.pushState({
-        //                         "content": content ,
-        //                         "title":title,
-        //                         "data":data
-        //                     },"", href);
-        //                     $('#loading-block')[0].innerHTML = content;
-        //                     $('#loading-block').fadeIn('slow');
-
-        //                     evalScript(data, $('#loading-block'));
-        //                     applyAjaxAnime();
-        //                 }).fail(function(){
-        //                     // failback to changing url
-        //                     window.location.href = href ;
-        //                 });
-        //             });
-        //         });
-        //     }
-
-        //     $("a").each(applyAjaxAnimeOn);
-        // };
-        // applyAjaxAnime();
-
-        // window.onpopstate = function(e){
-        //     if(e.state){
-                
-        //         document.title = htmlDecode(title);
-        //         $('#loading-block').fadeOut("slow",function(){
-        //             $('#loading-block')[0].innerHTML = e.state.content;
-        //             $('#loading-block').fadeIn('slow');
-        //             evalScript(e.state.data, $('#loading-block'));
-        //             applyAjaxAnime();
-        //         });
-        //     }
-        // }
-        
     });
 </script>
 
