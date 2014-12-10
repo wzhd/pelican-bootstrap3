@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-10 21:09+0900\n"
+"POT-Creation-Date: 2014-12-11 03:13+0900\n"
 "PO-Revision-Date: 2014-12-10 19:22+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -103,7 +103,7 @@ msgstr "このブログは次の技術で作られる："
 msgid "and"
 msgstr "及び"
 
-#: templates/includes/footer.html:22
+#: templates/includes/footer.html:18
 msgid "Top"
 msgstr "戻る"
 
@@ -117,5 +117,5 @@ msgstr "友達リンク"
 
 #: templates/includes/twitter_timeline.html:4
 msgid "Latest Tweets"
-msgstr "最近のツイート"
+msgstr "ツイート"
 

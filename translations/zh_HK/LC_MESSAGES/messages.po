@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-10 21:09+0900\n"
+"POT-Creation-Date: 2014-12-11 03:13+0900\n"
 "PO-Revision-Date: 2014-12-10 19:25+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_HK <LL@li.org>\n"
@@ -103,7 +103,7 @@ msgstr "這些開源技術驅動："
 msgid "and"
 msgstr "以及"
 
-#: templates/includes/footer.html:22
+#: templates/includes/footer.html:18
 msgid "Top"
 msgstr "回頁首"
 
