@@ -124,7 +124,7 @@
                 {% endfor %}
 
                 {% if extra_siteurls %}
-                    {% set langname = dict(zh='繁體', zc="简体", jp='日本語', en='English') %}
+                    {% set langname = dict(zh='繁體', zhs="简体", jp='日本語', en='English') %}
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
                             <i class="mdi-action-translate"></i><span class="caret"></span>
@@ -135,8 +135,6 @@
                             {% endfor %}
                         </ul>
                     </li>
-                    <!-- separator -->
-                    <li>&nbsp;</li>
                 {% endif %}
 
                 {% if DISPLAY_PAGES_ON_MENU %}
@@ -164,7 +162,7 @@
               </li>
             {% endif %}
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right hidden-sm">
               <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i><span class="icon-label">All</span></a></li>
               <li><a href="{{ SITEURL }}/{{ FEED_ALL_URL | default('feeds/all.atom.xml') }}" title="Atom feeds for all articles"><i class="fa fa-rss"></i></a></li>
             </ul>
