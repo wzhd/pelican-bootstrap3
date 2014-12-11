@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-11 21:06+0900\n"
+"POT-Creation-Date: 2014-12-12 01:04+0900\n"
 "PO-Revision-Date: 2014-12-10 19:25+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_HK <LL@li.org>\n"
@@ -36,7 +36,7 @@ msgstr "%(SITENAME)s 的归档"
 msgid "Permalink to %(title)s"
 msgstr "到 %(title)s 的永久链接"
 
-#: templates/article.html:113
+#: templates/article.html:104
 #, python-format
 msgid "This is part %(index)s of the \"%(name)s\" series:"
 msgstr "这篇文章是 \"%(name)s\" 系列文章的第 %(index)s 篇："
@@ -53,7 +53,7 @@ msgstr "作者 - %(SITENAME)s"
 
 #: templates/base.html:110
 msgid "Toggle navigation"
-msgstr "开阖导航"
+msgstr "切换导航"
 
 #: templates/base.html:160 templates/search.html:4
 msgid "Search"
@@ -77,6 +77,11 @@ msgstr "全部分类"
 msgid "All Categories for %(SITENAME)s"
 msgstr "%(SITENAME)s 的全部分类"
 
+#: templates/category.html:13
+#, python-format
+msgid "Feeds for category %(tag)s"
+msgstr "订阅分类 %(tag)s"
+
 #: templates/index.html:12
 msgid "All Articles"
 msgstr "全部文章"
@@ -85,12 +90,22 @@ msgstr "全部文章"
 msgid "Atom feeds for all articles"
 msgstr "订阅全部文章"
 
-#: templates/tag.html:11 templates/tags.html:9
+#: templates/tag.html:11 templates/tags.html:8
 #: templates/includes/sidebar_tags.html:3
 msgid "Tags"
 msgstr "标签云"
 
-#: templates/tags.html:16
+#: templates/tag.html:13
+#, python-format
+msgid "Feeds for tag %(tag)s"
+msgstr "订阅标签 %(tag)s"
+
+#: templates/tags.html:2
+#, python-format
+msgid "Tags - %(SITENAME)s"
+msgstr "全部标签 - %(SITENAME)s"
+
+#: templates/tags.html:15
 #, python-format
 msgid "Tags for %(SITENAME)s"
 msgstr "%(SITENAME)s 的全部标签"
@@ -99,6 +114,10 @@ msgstr "%(SITENAME)s 的全部标签"
 #, python-format
 msgid "About %(AUTHOR)s"
 msgstr "关于 %(AUTHOR)s"
+
+#: templates/includes/article_info.html:24
+msgid "Show source code of this page"
+msgstr "显示这篇文章的源文件"
 
 #: templates/includes/footer.html:11
 msgid "Powered by"
@@ -120,20 +139,7 @@ msgstr "GitHub仓库"
 msgid "Links"
 msgstr "友情链接"
 
-#: templates/includes/translations.html:11
-msgid "Show source code of this page"
-msgstr ""
-
 #: templates/includes/twitter_timeline.html:4
 msgid "Latest Tweets"
 msgstr "最新推文"
-
-#~ msgid "Permalink to %(title)s"
-#~ msgstr "到 %(title)s 的永久链接"
-
-#~ msgid "This is part %(index)s of the \"%(name)s\" series:"
-#~ msgstr "这篇文章是 \"%(name)s\" 系列文章的第 %(index)s 篇："
-
-#~ msgid "Source Code"
-#~ msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-11 21:06+0900\n"
+"POT-Creation-Date: 2014-12-12 01:04+0900\n"
 "PO-Revision-Date: 2014-12-10 19:22+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -34,12 +34,12 @@ msgstr "%(SITENAME)s　の文章一覧"
 #: templates/article.html:80
 #, python-format
 msgid "Permalink to %(title)s"
-msgstr ""
+msgstr "%(title)s　へのパーマリンク"
 
-#: templates/article.html:113
+#: templates/article.html:104
 #, python-format
 msgid "This is part %(index)s of the \"%(name)s\" series:"
-msgstr ""
+msgstr "この文章は \"%(name)s\"　シリーズの %(index)s 番目の文章："
 
 #: templates/author.html:3
 #, python-format
@@ -77,6 +77,11 @@ msgstr "分類一覧"
 msgid "All Categories for %(SITENAME)s"
 msgstr "%(SITENAME)s の分類一覧"
 
+#: templates/category.html:13
+#, python-format
+msgid "Feeds for category %(tag)s"
+msgstr "分類 %(tag)s のフィード"
+
 #: templates/index.html:12
 msgid "All Articles"
 msgstr "文章の一覧"
@@ -85,12 +90,22 @@ msgstr "文章の一覧"
 msgid "Atom feeds for all articles"
 msgstr "全ての文章のフィード"
 
-#: templates/tag.html:11 templates/tags.html:9
+#: templates/tag.html:11 templates/tags.html:8
 #: templates/includes/sidebar_tags.html:3
 msgid "Tags"
 msgstr "タグ雲"
 
-#: templates/tags.html:16
+#: templates/tag.html:13
+#, python-format
+msgid "Feeds for tag %(tag)s"
+msgstr "タグ %(tag)s のフィード"
+
+#: templates/tags.html:2
+#, python-format
+msgid "Tags - %(SITENAME)s"
+msgstr "タグ一覧 - %(SITENAME)s"
+
+#: templates/tags.html:15
 #, python-format
 msgid "Tags for %(SITENAME)s"
 msgstr "%(SITENAME)s　のタグ一覧"
@@ -99,6 +114,10 @@ msgstr "%(SITENAME)s　のタグ一覧"
 #, python-format
 msgid "About %(AUTHOR)s"
 msgstr "%(AUTHOR)s に連絡"
+
+#: templates/includes/article_info.html:24
+msgid "Show source code of this page"
+msgstr "このページのソースコードを表示する"
 
 #: templates/includes/footer.html:11
 msgid "Powered by"
@@ -120,20 +139,7 @@ msgstr "GitHubのリポ"
 msgid "Links"
 msgstr "友達リンク"
 
-#: templates/includes/translations.html:11
-msgid "Show source code of this page"
-msgstr ""
-
 #: templates/includes/twitter_timeline.html:4
 msgid "Latest Tweets"
 msgstr "ツイート"
-
-#~ msgid "Permalink to %(title)s"
-#~ msgstr ""
-
-#~ msgid "This is part %(index)s of the \"%(name)s\" series:"
-#~ msgstr "この文章は \"%(name)s\"　シリーズの %(index)s 番目の文章："
-
-#~ msgid "Source Code"
-#~ msgstr ""
 

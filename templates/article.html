@@ -83,20 +83,11 @@
                     </h1>
                 </div>
                 <div class="panel-body">
-                    <div class="row">
-                        <div class="col-lg-9 col-md-8 col-sm-12">
-                             {% include 'includes/article_info.html' %}
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            {% import 'includes/translations.html' as translations with context %}
-                            {{ translations.translations_for(article) }}
-                        </div>
-                    </div>
+                    {% include 'includes/article_info.html' %}
                 </div>
             </header>
 
             
-
             <div class="entry-content jumbotron" id="article-content">
                 {{ article.content }}
             </div>

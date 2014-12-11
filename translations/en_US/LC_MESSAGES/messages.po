@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-11 21:06+0900\n"
+"POT-Creation-Date: 2014-12-12 01:04+0900\n"
 "PO-Revision-Date: 2014-12-10 19:24+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "Permalink to %(title)s"
 msgstr ""
 
-#: templates/article.html:113
+#: templates/article.html:104
 #, python-format
 msgid "This is part %(index)s of the \"%(name)s\" series:"
 msgstr ""
@@ -77,6 +77,11 @@ msgstr ""
 msgid "All Categories for %(SITENAME)s"
 msgstr ""
 
+#: templates/category.html:13
+#, python-format
+msgid "Feeds for category %(tag)s"
+msgstr ""
+
 #: templates/index.html:12
 msgid "All Articles"
 msgstr ""
@@ -85,12 +90,22 @@ msgstr ""
 msgid "Atom feeds for all articles"
 msgstr "Atom feeds for all articles"
 
-#: templates/tag.html:11 templates/tags.html:9
+#: templates/tag.html:11 templates/tags.html:8
 #: templates/includes/sidebar_tags.html:3
 msgid "Tags"
 msgstr ""
 
-#: templates/tags.html:16
+#: templates/tag.html:13
+#, python-format
+msgid "Feeds for tag %(tag)s"
+msgstr ""
+
+#: templates/tags.html:2
+#, python-format
+msgid "Tags - %(SITENAME)s"
+msgstr ""
+
+#: templates/tags.html:15
 #, python-format
 msgid "Tags for %(SITENAME)s"
 msgstr ""
@@ -99,6 +114,10 @@ msgstr ""
 #, python-format
 msgid "About %(AUTHOR)s"
 msgstr "About %(AUTHOR)s"
+
+#: templates/includes/article_info.html:24
+msgid "Show source code of this page"
+msgstr ""
 
 #: templates/includes/footer.html:11
 msgid "Powered by"
@@ -118,10 +137,6 @@ msgstr ""
 
 #: templates/includes/links.html:3
 msgid "Links"
-msgstr ""
-
-#: templates/includes/translations.html:11
-msgid "Show source code of this page"
 msgstr ""
 
 #: templates/includes/twitter_timeline.html:4
