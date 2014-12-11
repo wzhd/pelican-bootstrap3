@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-11 03:13+0900\n"
+"POT-Creation-Date: 2014-12-11 13:47+0900\n"
 "PO-Revision-Date: 2014-12-10 19:25+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_HK <LL@li.org>\n"
@@ -30,6 +30,11 @@ msgstr "归档"
 #, python-format
 msgid "Archives for %(SITENAME)s"
 msgstr "%(SITENAME)s 的归档"
+
+#: templates/article.html:80
+#, python-format
+msgid "Permalink to %(title)s"
+msgstr "到 %(title)s 的永久链接"
 
 #: templates/article.html:106
 #, python-format
@@ -103,7 +108,7 @@ msgstr "这些开源技术驱动："
 msgid "and"
 msgstr "以及"
 
-#: templates/includes/footer.html:18
+#: templates/includes/footer.html:22
 msgid "Top"
 msgstr "回页首"
 
@@ -118,4 +123,10 @@ msgstr "友情链接"
 #: templates/includes/twitter_timeline.html:4
 msgid "Latest Tweets"
 msgstr "最新推文"
+
+#~ msgid "Permalink to %(title)s"
+#~ msgstr "到 %(title)s 的永久链接"
+
+#~ msgid "This is part %(index)s of the \"%(name)s\" series:"
+#~ msgstr "这篇文章是 \"%(name)s\" 系列文章的第 %(index)s 篇："
 

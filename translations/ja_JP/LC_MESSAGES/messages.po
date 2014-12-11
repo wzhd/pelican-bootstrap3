@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-11 03:13+0900\n"
+"POT-Creation-Date: 2014-12-11 13:47+0900\n"
 "PO-Revision-Date: 2014-12-10 19:22+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -31,10 +31,15 @@ msgstr "文章一覧"
 msgid "Archives for %(SITENAME)s"
 msgstr "%(SITENAME)s　の文章一覧"
 
+#: templates/article.html:80
+#, python-format
+msgid "Permalink to %(title)s"
+msgstr ""
+
 #: templates/article.html:106
 #, python-format
 msgid "This is part %(index)s of the \"%(name)s\" series:"
-msgstr "この文章は \"%(name)s\"　シリーズの %(index)s 番目の文章："
+msgstr ""
 
 #: templates/author.html:3
 #, python-format
@@ -103,7 +108,7 @@ msgstr "このブログは次の技術で作られる："
 msgid "and"
 msgstr "及び"
 
-#: templates/includes/footer.html:18
+#: templates/includes/footer.html:22
 msgid "Top"
 msgstr "戻る"
 
@@ -118,4 +123,10 @@ msgstr "友達リンク"
 #: templates/includes/twitter_timeline.html:4
 msgid "Latest Tweets"
 msgstr "ツイート"
+
+#~ msgid "Permalink to %(title)s"
+#~ msgstr ""
+
+#~ msgid "This is part %(index)s of the \"%(name)s\" series:"
+#~ msgstr "この文章は \"%(name)s\"　シリーズの %(index)s 番目の文章："
 

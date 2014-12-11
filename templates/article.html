@@ -77,17 +77,17 @@
                         <a href="{{ SITEURL }}/{{ article.url }}"
                            rel="bookmark"
                            class="btn btn-primary btn-lg"
-                           title="Permalink to {{ article.title|striptags }}">
+                           title="{% trans title=article.title|striptags %}Permalink to {{ title }}{% endtrans %}">
                            <i class="mdi-action-launch"></i>
                         </a>
                     </h1>
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-10 col-md-9 col-sm-7 col-xs-6">
-                            {% include "includes/article_info.html" %}
+                        <div class="col-lg-10 col-md-9 col-sm-12">
+                             {% include 'includes/article_info.html' %}
                         </div>
-                        <div class="col-lg-2 col-md-3 col-sm-5 col-xs-6">
+                        <div class="col-lg-2 col-md-3 col-sm-12">
                             {% import 'includes/translations.html' as translations with context %}
                             {{ translations.translations_for(article) }}
                         </div>
