@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-11 13:47+0900\n"
+"POT-Creation-Date: 2014-12-11 21:06+0900\n"
 "PO-Revision-Date: 2014-12-10 19:24+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "Permalink to %(title)s"
 msgstr ""
 
-#: templates/article.html:106
+#: templates/article.html:113
 #, python-format
 msgid "This is part %(index)s of the \"%(name)s\" series:"
 msgstr ""
@@ -120,6 +120,10 @@ msgstr ""
 msgid "Links"
 msgstr ""
 
+#: templates/includes/translations.html:11
+msgid "Show source code of this page"
+msgstr ""
+
 #: templates/includes/twitter_timeline.html:4
 msgid "Latest Tweets"
 msgstr ""
@@ -128,5 +132,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "This is part %(index)s of the \"%(name)s\" series:"
+#~ msgstr ""
+
+#~ msgid "Source Code"
 #~ msgstr ""
 

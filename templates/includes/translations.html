@@ -2,16 +2,15 @@
 {% if article.translations %}
 <div class="btn-group translations">
 {% set langname = dict(zh='繁體', zhs="简体", jp='日本語', en='English') %}
-<a href="javascript:void(0)" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-<i class="mdi-action-translate"></i>
-{{ langname[article.lang] }}
-<span class="caret">
-</a>
+<a href="javascript:void(0)" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="mdi-action-translate"></i>{{ langname[article.lang] }}<span class="caret"></a>
 <ul class="dropdown-menu">
 {% for translation in article.translations %}
-	<li><a href="{{ SITEURL }}/{{ translation.url }}" class="translate">{{ langname[translation.lang] }}</a></li>
+<li><a href="{{ SITEURL }}/{{ translation.url }}" class="translate">{{ langname[translation.lang] }}</a></li>
 {% endfor %}
 </ul>
+<a onclick="$.get('{{SITEURL}}/{{article.slug}}.text', function(data){$('#source-code').text(data)});$('#article-content').toggle();$('#source-content').toggle();" class="btn btn-primary" title="{% trans %}Show source code of this page{%endtrans%}">
+<i class="fa fa-code"></i>
+</a>
 </div>
 {% endif %}
 {% endmacro %}

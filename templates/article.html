@@ -84,10 +84,10 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-10 col-md-9 col-sm-12">
+                        <div class="col-lg-9 col-md-8 col-sm-12">
                              {% include 'includes/article_info.html' %}
                         </div>
-                        <div class="col-lg-2 col-md-3 col-sm-12">
+                        <div class="col-lg-3 col-md-4 col-sm-12">
                             {% import 'includes/translations.html' as translations with context %}
                             {{ translations.translations_for(article) }}
                         </div>
@@ -95,9 +95,16 @@
                 </div>
             </header>
 
+            
+
             <div class="entry-content jumbotron" id="article-content">
                 {{ article.content }}
             </div>
+            <div class="entry-content jumbotron" id="source-content" style="display: none">
+                <pre><code id="source-code">
+                </code></pre>
+            </div>
+ 
 
             {% if article.series %}
             <div class="panel panel-default">
