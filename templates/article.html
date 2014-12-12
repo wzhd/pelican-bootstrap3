@@ -87,14 +87,24 @@
                 </div>
             </header>
 
-            
             <div class="entry-content jumbotron" id="article-content">
+                {% if article.toc %}
+                    <div class="panel panel-default">
+                    <div class="panel-heading">
+                    {% trans %}Table of Contents{% endtrans %}
+                    </div>
+                    <div class="panel-boy">
+                    {{ article.toc }}
+                    </div>
+                    </div>
+                {% endif %}    
                 {{ article.content }}
             </div>
             <div class="entry-content jumbotron" id="source-content" style="display: none">
                 <pre><code id="source-code">
                 </code></pre>
             </div>
+
  
 
             {% if article.series %}

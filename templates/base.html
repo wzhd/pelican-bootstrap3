@@ -124,7 +124,7 @@
                 {% endfor %}
 
                 {% if extra_siteurls %}
-                    {% set langname = dict(zh='繁體', zhs="简体", jp='日本語', en='English') %}
+                    {% set langname = dict(zh='繁體中文', zhs="简体中文", jp='日本語', en='English') %}
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
                             <i class="mdi-action-translate"></i><span class="caret"></span>
@@ -227,6 +227,15 @@
     $(document).ready(function() {
         $.material.init();
         $("div.navbar").autoHidingNavbar();
+
+        // $('.toc').affix({
+        //   offset: {
+        //     top: 100,
+        //     bottom: function () {
+        //       return (this.bottom = $('#article-content').outerHeight(true))
+        //     }
+        //   }
+        // })
     });
 </script>
 
