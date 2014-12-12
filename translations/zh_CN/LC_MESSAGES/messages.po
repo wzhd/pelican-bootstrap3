@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-12 04:37+0900\n"
+"POT-Creation-Date: 2014-12-12 18:03+0900\n"
 "PO-Revision-Date: 2014-12-10 19:25+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_HK <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr "到 %(title)s 的永久链接"
 
 #: templates/article.html:94
 msgid "Table of Contents"
-msgstr ""
+msgstr "目录"
 
 #: templates/article.html:114
 #, python-format

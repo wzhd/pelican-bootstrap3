@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-12 04:37+0900\n"
+"POT-Creation-Date: 2014-12-12 18:03+0900\n"
 "PO-Revision-Date: 2014-12-10 19:22+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr "%(title)s　へのパーマリンク"
 
 #: templates/article.html:94
 msgid "Table of Contents"
-msgstr ""
+msgstr "目次"
 
 #: templates/article.html:114
 #, python-format
