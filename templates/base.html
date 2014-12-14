@@ -124,33 +124,58 @@
                 {% endfor %}
 
                 {% if extra_siteurls %}
-                    {% set langname = dict(zh='繁體中文', zhs="简体中文", jp='日本語', en='English') %}
-                    <li class="dropdown">
+                    {% set langname = dict(zh='繁體', zhs="简体", jp='日本語', en='English') %}
+                    <li class="dropdown hidden-xs hidden-lg">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
                             <i class="mdi-action-translate"></i><span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            {% for lang, url in extra_siteurls.items() %}
-                            <li><a href="{{ url }}/">{{ langname[lang] }}</a></li>
+                            {% for lang, url in lang_siteurls.items() %}
+                            <li{% if lang == DEFAULT_LANG %} class="active"{% endif %}><a href="{{ url }}/">{{ langname[lang] }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>
+
+                    <ul class="nav navbar-nav hidden-md hidden-sm">
+                        {% for lang, url in lang_siteurls.items() %}
+                        <li{% if lang == DEFAULT_LANG %} class="active"{% endif %}><a href="{{ url }}/"><i class="mdi-action-translate"></i>{{ langname[lang] }}</a></li>
+                        {% endfor %}
+                    </ul>
+
+                    <li>&nbsp;</li>
                 {% endif %}
 
                 {% if DISPLAY_PAGES_ON_MENU %}
                     {% for p in PAGES %}
-                     <li class="hidden-sm {% if p == page %} active{% endif %}"><a href="{{ SITEURL }}/{{ p.url }}">
+                     <li class="{% if p == page %} active{% endif %}"><a href="{{ SITEURL }}/{{ p.url }}"><i class="fa fa-user"></i>
                          {{ p.menulabel|default(p.title) }}
                       </a></li>
                   {% endfor %}
                   <li>&nbsp;</li>
                 {% endif %}
                 {% if DISPLAY_CATEGORIES_ON_MENU %}
+
+                    <li class="dropdown hidden-xs hidden-md hidden-lg">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+                            <i class="fa fa-folder-o"></i><span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                        {% for cat, null in categories %}
+                            <li {% if cat == category %}class="active"{% endif %}>
+                                <a href="{{ SITEURL }}/{{ cat.url }}"><i class="fa fa-folder-o"></i> {{ cat | capitalize }}</a>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </li>
+
+                    <ul class="nav navbar-nav hidden-sm">
                     {% for cat, null in categories %}
                         <li {% if cat == category %}class="active"{% endif %}>
-                            <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a>
+                            <a href="{{ SITEURL }}/{{ cat.url }}"><i class="fa fa-folder-o"></i> {{ cat | capitalize }}</a>
                         </li>
                     {% endfor %}
+                    </ul>
+
                 {% endif %}
             </ul>
             <ul class="nav navbar-right navbar-form">
@@ -162,7 +187,7 @@
               </li>
             {% endif %}
             </ul>
-            <ul class="nav navbar-nav navbar-right hidden-sm">
+            <ul class="nav navbar-nav navbar-right">
               <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i><span class="icon-label">{{ gettext('All') }}</span></a></li>
               <li><a href="{{ SITEURL }}/{{ FEED_ALL_URL | default('feeds/all.atom.xml') }}" title="Atom feeds for all articles"><i class="fa fa-rss"></i></a></li>
             </ul>
