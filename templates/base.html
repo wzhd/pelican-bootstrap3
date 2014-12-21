@@ -218,11 +218,14 @@
             {% if not HIDE_SIDEBAR %}
                 {% include 'includes/sidebar.html' %}
             {% endif %}
+
+            
             </aside>
         </div>
         {% endif %}
     </div>
 </div>
+
 {% include 'includes/footer.html' %}
 
 <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.min.js"></script>
@@ -253,7 +256,7 @@
         $.material.init();
         $("div.navbar").autoHidingNavbar();
 
-        // $('.toc').affix({
+        // $('#sidebar_toc').affix({
         //   offset: {
         //     top: 100,
         //     bottom: function () {

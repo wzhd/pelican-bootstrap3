@@ -6,7 +6,9 @@ trans_target = list(map(lambda x: x[:-2]+"mo", trans_source))
 Alias("trans", trans_target)
 
 NoClean(trans_source)
+Precious(trans_source)
 NoClean('messages.pot')
+Precious('messages.pot')
 
 bootstrap = Command('static/css/bootstrap.min.css',
                     Glob('static/bootstrap/*.less') +
