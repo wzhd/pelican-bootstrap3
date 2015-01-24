@@ -21,7 +21,7 @@
         </span>
     {% endif %}
     {% import 'includes/translations.html' as translations with context %}{{ translations.translations_for(article) }}
-    <a onclick="$.get('{{SITEURL}}/{{article.slug}}.text', function(data){$('#source-code').text(data)});$('#article-content').toggle();$('#source-content').toggle();" class="btn btn-primary" title="{% trans %}Show source code of this page{%endtrans%}"><i class="fa fa-code"></i></a>
+    <a onclick="$.get('{{SITEURL}}/{{article.slug}}.rst.html', function(data){$('#source-code').html(data)});$('#article-content').toggle();$('#source-content').toggle();" class="btn btn-primary" title="{% trans %}Show source code of this page{%endtrans%}"><i class="fa fa-code"></i></a>
     {% include "includes/comment_count.html" %}
     {% include "includes/taglist.html" %}
 </footer><!-- /.post-info -->
