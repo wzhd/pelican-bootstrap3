@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-01-29 00:35+0900\n"
+"POT-Creation-Date: 2015-01-29 02:48+0900\n"
 "PO-Revision-Date: 2014-12-10 19:24+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
@@ -55,15 +55,15 @@ msgstr ""
 msgid "Authors - %(SITENAME)s"
 msgstr ""
 
-#: templates/base.html:110
+#: templates/base.html:111
 msgid "Toggle navigation"
 msgstr ""
 
-#: templates/base.html:185 templates/search.html:4
+#: templates/base.html:186 templates/search.html:4
 msgid "Search"
 msgstr ""
 
-#: templates/base.html:191
+#: templates/base.html:192
 msgid "All"
 msgstr "All"
 
