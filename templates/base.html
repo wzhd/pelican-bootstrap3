@@ -101,7 +101,7 @@
         <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/ripples.min.css" rel="stylesheet">
     {% endif %}
 </head>
-<body>
+<body data-spy="scroll" data-target="#affix-toc">
 <div style="display:none" id="title">{{ title() }}</div>
 
 <div class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %} navbar-fixed-top" role="navigation">
@@ -229,6 +229,8 @@
             {% if not HIDE_SIDEBAR %}
                 {% include 'includes/sidebar.html' %}
             {% endif %}
+            {% block contentsidebar %}
+            {% endblock %}
             </aside>
         </div>
         {% endif %}
@@ -270,14 +272,20 @@
             $('#mimg').attr('src',sr);
             $('#myModal').modal('show');
         });
-        // $('#sidebar_toc').affix({
-        //   offset: {
-        //     top: 100,
-        //     bottom: function () {
-        //       return (this.bottom = $('#article-content').outerHeight(true))
-        //     }
-        //   }
-        // })
+        $('#affix-toc').affix({
+          offset: {
+            top: function(){
+                if($('#affix-toc').hasClass("affix"))
+                    return $('#sidebar').height();
+                return $('#sidebar').height() - $('#affix-toc').height();
+            },
+            bottom: function (){
+                return $('#comments').outerHeight()+
+                    $('#fcfooter').outerHeight()+
+                    $('#prevnext').outerHeight();
+            }
+          }
+        });
     });
 </script>
 

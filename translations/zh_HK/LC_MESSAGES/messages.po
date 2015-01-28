@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-01-29 02:48+0900\n"
+"POT-Creation-Date: 2015-01-29 06:05+0900\n"
 "PO-Revision-Date: 2014-12-10 19:25+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_HK <LL@li.org>\n"
@@ -31,16 +31,16 @@ msgstr "歸檔"
 msgid "Archives for %(SITENAME)s"
 msgstr "%(SITENAME)s 的歸檔"
 
-#: templates/article.html:80
+#: templates/article.html:74 templates/article.html:107
+msgid "Table of Contents"
+msgstr "目錄"
+
+#: templates/article.html:93
 #, python-format
 msgid "Permalink to %(title)s"
 msgstr "到 %(title)s 的永久鏈接"
 
-#: templates/article.html:94
-msgid "Table of Contents"
-msgstr "目錄"
-
-#: templates/article.html:115
+#: templates/article.html:128
 #, python-format
 msgid "This is part %(index)s of the \"%(name)s\" series:"
 msgstr "這篇文章是 \"%(name)s\" 系列文章的第 %(index)s 篇："

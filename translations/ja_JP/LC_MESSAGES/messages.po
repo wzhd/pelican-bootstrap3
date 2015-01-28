@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-01-29 02:48+0900\n"
+"POT-Creation-Date: 2015-01-29 06:05+0900\n"
 "PO-Revision-Date: 2014-12-10 19:22+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -31,16 +31,16 @@ msgstr "文章一覧"
 msgid "Archives for %(SITENAME)s"
 msgstr "%(SITENAME)s　の文章一覧"
 
-#: templates/article.html:80
+#: templates/article.html:74 templates/article.html:107
+msgid "Table of Contents"
+msgstr "目次"
+
+#: templates/article.html:93
 #, python-format
 msgid "Permalink to %(title)s"
 msgstr "%(title)s　へのパーマリンク"
 
-#: templates/article.html:94
-msgid "Table of Contents"
-msgstr "目次"
-
-#: templates/article.html:115
+#: templates/article.html:128
 #, python-format
 msgid "This is part %(index)s of the \"%(name)s\" series:"
 msgstr "この文章は \"%(name)s\"　シリーズの %(index)s 番目の文章："

@@ -67,6 +67,19 @@
     {% endif %}
 {% endblock %}
 
+{% block contentsidebar %}
+    {% if article.toc %}
+        <div class="panel panel-default" id="affix-toc">
+            <div class="panel-heading"><h4>
+            {% trans %}Table of Contents{% endtrans %}</h4>
+            </div>
+            <div class="panel-boy">
+            {{ article.toc }}
+            </div>
+        </div>
+    {% endif %}  
+{% endblock %}
+
 {% block content %}
     <section id="content" class="article-content">
         <article>
@@ -90,14 +103,14 @@
             <div class="entry-content jumbotron" id="article-content">
                 {% if article.toc %}
                     <div class="panel panel-default">
-                    <div class="panel-heading">
-                    {% trans %}Table of Contents{% endtrans %}
+                        <div class="panel-heading">
+                        {% trans %}Table of Contents{% endtrans %}
+                        </div>
+                        <div class="panel-boy">
+                        {{ article.toc }}
+                        </div>
                     </div>
-                    <div class="panel-boy">
-                    {{ article.toc }}
-                    </div>
-                    </div>
-                {% endif %}    
+                {% endif %} 
                 {{ article.content }}
             </div>
             <div class="entry-content jumbotron" id="source-content" style="display: none">
@@ -123,7 +136,7 @@
             </div>
             {% endif %}
 
-            <div class="row">
+            <div class="row" id="prevnext">
                 <div class="col-xs-6">
                     {% if article.prev_article %}
                     <a href="{{ SITEURL }}/{{article.prev_article.url}}" class="btn btn-default btn-lg" style="float:right;clear:both">
