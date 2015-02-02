@@ -101,12 +101,12 @@
         <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/ripples.min.css" rel="stylesheet">
     {% endif %}
 </head>
-<body data-spy="scroll" data-target="#affix-toc">
+<body>
 <div style="display:none" id="title">{{ title() }}</div>
 
 <div class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %} navbar-fixed-top" role="navigation">
     <div class="container">
-        <div class="navbar-header">
+         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">{{ gettext('Toggle navigation') }}</span>
                 <span class="icon-bar"></span>
@@ -126,7 +126,7 @@
 
                 {% if extra_siteurls %}
                     {% set langname = dict(zh='繁體', zhs="简体", jp='日本語', en='English') %}
-                    <li class="dropdown hidden-xs hidden-lg hidden-xl">
+                    <li class="dropdown hidden-lg hidden-xl">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
                             <i class="mdi-action-translate"></i><span class="caret"></span>
                         </a>
@@ -137,7 +137,7 @@
                         </ul>
                     </li>
 
-                    <ul class="nav navbar-nav hidden-md hidden-sm">
+                    <ul class="nav navbar-nav hidden-xs hidden-md hidden-sm">
                         {% for lang, url in lang_siteurls.items() %}
                         <li{% if lang == DEFAULT_LANG %} class="active"{% endif %}><a href="{{ url }}/"><i class="mdi-action-translate"></i>{{ langname[lang] }}</a></li>
                         {% endfor %}
@@ -156,7 +156,7 @@
                 {% endif %}
                 {% if DISPLAY_CATEGORIES_ON_MENU %}
 
-                    <li class="dropdown hidden-xs hidden-md hidden-lg hidden-xl">
+                    <li class="dropdown hidden-md hidden-lg hidden-xl">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
                             <i class="fa fa-folder-o"></i><span class="caret"></span>
                         </a>
@@ -169,7 +169,7 @@
                         </ul>
                     </li>
 
-                    <ul class="nav navbar-nav hidden-sm">
+                    <ul class="nav navbar-nav hidden-xs hidden-sm">
                     {% for cat, null in categories %}
                         <li {% if cat == category %}class="active"{% endif %}>
                             <a href="{{ SITEURL }}/{{ cat.url }}"><i class="fa fa-folder-o"></i> {{ cat | capitalize }}</a>
@@ -179,7 +179,7 @@
 
                 {% endif %}
             </ul>
-            <ul class="nav navbar-right navbar-form">
+            <ul class="nav navbar-right navbar-form hidden-xs">
             {% if 'tipue_search' in PLUGINS %}
               <li><span>
                 <form class="navbar-search" action="/search.html">
@@ -188,7 +188,7 @@
               </li>
             {% endif %}
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right hidden-xs">
               <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i><span class="icon-label">{{ gettext('All') }}</span></a></li>
               <li><a href="{{ SITEURL }}/{{ FEED_URL | default('feeds/atom.xml') }}" title="Atom feeds for all articles"><i class="fa fa-rss"></i></a></li>
             </ul>
