@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-02-10 03:42+0900\n"
+"POT-Creation-Date: 2015-02-10 13:33+0900\n"
 "PO-Revision-Date: 2014-12-10 19:25+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_HK <LL@li.org>\n"
@@ -59,11 +59,11 @@ msgstr "作者 - %(SITENAME)s"
 msgid "Toggle navigation"
 msgstr "切换导航"
 
-#: templates/base.html:201 templates/search.html:4
+#: templates/base.html:207 templates/base.html:217 templates/search.html:4
 msgid "Search"
 msgstr "搜索"
 
-#: templates/base.html:207
+#: templates/base.html:224
 msgid "All"
 msgstr "归档"
 
