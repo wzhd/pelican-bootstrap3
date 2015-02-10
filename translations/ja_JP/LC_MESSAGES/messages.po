@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-02-08 19:55+0900\n"
+"POT-Creation-Date: 2015-02-10 03:42+0900\n"
 "PO-Revision-Date: 2014-12-10 19:22+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -59,11 +59,11 @@ msgstr "著者一覧 - %(SITENAME)s"
 msgid "Toggle navigation"
 msgstr "ナビの切り替え"
 
-#: templates/base.html:186 templates/search.html:4
+#: templates/base.html:201 templates/search.html:4
 msgid "Search"
 msgstr "検索"
 
-#: templates/base.html:192
+#: templates/base.html:207
 msgid "All"
 msgstr "一覧"
 
@@ -94,6 +94,10 @@ msgstr "文章の一覧"
 msgid "Atom feeds for all articles"
 msgstr "全ての文章のフィード"
 
+#: templates/page.html:59 templates/includes/article_info.html:24
+msgid "Show source code of this page"
+msgstr "このページのソースコードを表示する"
+
 #: templates/tag.html:11 templates/tags.html:8
 #: templates/includes/sidebar_tags.html:3
 msgid "Tags"
@@ -118,10 +122,6 @@ msgstr "%(SITENAME)s　のタグ一覧"
 #, python-format
 msgid "About %(AUTHOR)s"
 msgstr "%(AUTHOR)s に連絡"
-
-#: templates/includes/article_info.html:24
-msgid "Show source code of this page"
-msgstr "このページのソースコードを表示する"
 
 #: templates/includes/footer.html:11
 msgid "Powered by"

@@ -56,6 +56,7 @@
                     <div class="col-lg-2 col-md-3">
                         {% import 'includes/translations.html' as translations with context %}
                         {{ translations.translations_for(page) }}
+                         <a onclick="$.get('{{SITEURL}}/{{page.slug}}.rst.html', function(data){$('#source-code').html(data)});$('#article-content').toggle();$('#source-content').toggle();" class="btn btn-primary" title="{% trans %}Show source code of this page{%endtrans%}"><i class="fa fa-code"></i></a>
                     </div>
                 </div>
                 </h1>
@@ -66,8 +67,11 @@
                 {% endif %}
             </div>
         </header>
-        <div class="entry-content jumbotron">
+        <div class="entry-content jumbotron" id="article-content">
             {{ page.content }}
+        </div>
+        <div class="entry-content jumbotron" id="source-content" style="display: none">
+            <div id="source-code"></div>
         </div>
         {% include 'includes/comments.html' %}
     </section>

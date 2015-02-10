@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-02-08 19:55+0900\n"
+"POT-Creation-Date: 2015-02-10 03:42+0900\n"
 "PO-Revision-Date: 2014-12-10 19:25+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_HK <LL@li.org>\n"
@@ -59,11 +59,11 @@ msgstr "作者 - %(SITENAME)s"
 msgid "Toggle navigation"
 msgstr "切换导航"
 
-#: templates/base.html:186 templates/search.html:4
+#: templates/base.html:201 templates/search.html:4
 msgid "Search"
 msgstr "搜索"
 
-#: templates/base.html:192
+#: templates/base.html:207
 msgid "All"
 msgstr "归档"
 
@@ -94,6 +94,10 @@ msgstr "全部文章"
 msgid "Atom feeds for all articles"
 msgstr "订阅全部文章"
 
+#: templates/page.html:59 templates/includes/article_info.html:24
+msgid "Show source code of this page"
+msgstr "显示这篇文章的源文件"
+
 #: templates/tag.html:11 templates/tags.html:8
 #: templates/includes/sidebar_tags.html:3
 msgid "Tags"
@@ -118,10 +122,6 @@ msgstr "%(SITENAME)s 的全部标签"
 #, python-format
 msgid "About %(AUTHOR)s"
 msgstr "关于 %(AUTHOR)s"
-
-#: templates/includes/article_info.html:24
-msgid "Show source code of this page"
-msgstr "显示这篇文章的源文件"
 
 #: templates/includes/footer.html:11
 msgid "Powered by"
