@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-02-24 02:50+0900\n"
+"POT-Creation-Date: 2015-02-24 04:44+0900\n"
 "PO-Revision-Date: 2014-12-10 19:25+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_HK <LL@li.org>\n"
@@ -40,7 +40,7 @@ msgstr "目錄"
 msgid "Permalink to %(title)s"
 msgstr "到 %(title)s 的永久鏈接"
 
-#: templates/article.html:128
+#: templates/article.html:148
 #, python-format
 msgid "This is part %(index)s of the \"%(name)s\" series:"
 msgstr "這篇文章是 \"%(name)s\" 系列文章的第 %(index)s 篇："
@@ -123,15 +123,15 @@ msgstr "%(SITENAME)s 的全部標籤"
 msgid "About %(AUTHOR)s"
 msgstr "關於 %(AUTHOR)s"
 
-#: templates/includes/footer.html:11
+#: templates/includes/footer.html:10
 msgid "Powered by"
 msgstr "這些開源技術驅動："
 
-#: templates/includes/footer.html:15
+#: templates/includes/footer.html:14
 msgid "and"
 msgstr "以及"
 
-#: templates/includes/footer.html:22
+#: templates/includes/footer.html:21
 msgid "Top"
 msgstr "回頁首"
 

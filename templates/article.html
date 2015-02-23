@@ -118,28 +118,12 @@
                 </code></pre> -->
                 <div id="source-code"></div>
             </div>
-
-
-
-            {% if article.series %}
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                <h4>
-                {% trans index=article.series.index, name=article.series.name %}This is part {{ index }} of the "{{ name }}" series:{% endtrans %}
-                </h4>
-                </div>
-                <div class="btn-group-vertical btn-group-flat" style="width:100%">
-                    {% for part_article in article.series.all %}
-                        <a class="btn btn-{% if part_article == article %}primary{%else%}default{% endif %}" href='{{ SITEURL }}/{{ part_article.url }}' style="text-align:left">{{ part_article.title }}</a>
-                    {% endfor %}
-                </div>
-            </div>
-            {% endif %}
+            <!-- /.entry-content -->
 
             <div class="row" id="prevnext">
                 <div class="col-xs-12">
                     {% if article.prev_article %}
-                    <a href="{{ SITEURL }}/{{article.prev_article.url}}" class="btn btn-default btn-lg" style="float:right;clear:both">
+                    <a href="{{ SITEURL }}/{{article.prev_article.url}}" class="btn btn-default btn-lg" style="float:left;clear:both;background-color:#fff;">
                         <h4><i class="fa fa-arrow-left"></i>
                         {{article.prev_article.title}}
                         </h4>
@@ -148,7 +132,7 @@
                 </div>
                 <div class="col-xs-12">
                     {% if article.next_article %}
-                    <a href="{{ SITEURL }}/{{article.next_article.url}}" class="btn btn-default btn-lg" style="float:left;clear:both">
+                    <a href="{{ SITEURL }}/{{article.next_article.url}}" class="btn btn-default btn-lg" style="float:right;clear:both;background-color:#fff;">
                         <h4>
                         {{article.next_article.title}}<i class="fa fa-arrow-right"></i>
                         </h4>
@@ -156,7 +140,22 @@
                     {% endif %}
                 </div>
             </div>
-            <!-- /.entry-content -->
+
+            {% if article.series %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4>
+                  {% trans index=article.series.index, name=article.series.name %}This is part {{ index }} of the "{{ name }}" series:{% endtrans %}
+                  </h4>
+                </div>
+                <ul class="list-group">
+                    {% for part_article in article.series.all %}
+                        <li class="list-group-item"><a class="btn btn-{% if part_article == article %}primary{%else%}default{% endif %}" href='{{ SITEURL }}/{{ part_article.url }}' style="text-align:left">{{ part_article.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
             {% include 'includes/related-posts.html' %}
             {% include 'includes/addthis.html' %}
             {% include 'includes/comments.html' %}
