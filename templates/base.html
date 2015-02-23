@@ -66,7 +66,7 @@
     {% else %}
         <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.min.css" rel="stylesheet">
     {% endif %}
-    
+
     <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet">
@@ -167,7 +167,7 @@
                   </ul>
                 {% endif %}
             </ul>
-            
+
                 {% if DISPLAY_CATEGORIES_ON_MENU %}
                 <ul class="nav navbar-nav hidden-md hidden-lg hidden-xl">
                     <li class="dropdown hidden-md hidden-lg hidden-xl">
@@ -193,8 +193,8 @@
                     </ul>
 
                 {% endif %}
-            
-            
+
+
             {% if 'tipue_search' in PLUGINS %}
             <ul class="nav navbar-nav navbar-right hidden-sm hidden-md hidden-lg hidden-xl">
                 <li class="dropdown hidden-md hidden-lg hidden-xl">
@@ -204,7 +204,7 @@
                     <ul class="dropdown-menu">
                       <li><span>
                         <form class="navbar-search" action="/search.html">
-                          <input type="text" class="search-query form-control col-lg-8" placeholder="{% trans %}Search{% endtrans %}" name="q" id="tipue_search_input" required>
+                          <input type="text" class="search-query form-control col-lg-16" placeholder="{% trans %}Search{% endtrans %}" name="q" id="tipue_search_input" required>
                         </form></span>
                       </li>
                     </ul>
@@ -214,12 +214,12 @@
             <ul class="nav navbar-right navbar-form hidden-xs">
               <li><span>
                 <form class="navbar-search" action="/search.html">
-                  <input type="text" class="search-query form-control col-lg-8" placeholder="{% trans %}Search{% endtrans %}" name="q" id="tipue_search_input" required>
+                  <input type="text" class="search-query form-control col-lg-16" placeholder="{% trans %}Search{% endtrans %}" name="q" id="tipue_search_input" required>
                 </form></span>
               </li>
             </ul>
             {% endif %}
-            
+
             <ul class="nav navbar-nav navbar-right hidden-xs">
               <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i><span class="icon-label">{{ gettext('All') }}</span></a></li>
               <li><a href="{{ SITEURL }}/{{ FEED_URL | default('feeds/atom.xml') }}" title="Atom feeds for all articles"><i class="fa fa-rss"></i></a></li>
@@ -237,7 +237,7 @@
 <!-- End Banner -->
 <div class="container">
     <div class="row">
-        <div class="col-xl-9 col-lg-10 col-md-9">
+        <div class="col-xl-21 col-lg-20 col-md-18">
             <div id="loading-block">
             {% block breadcrumbs %}
             {% endblock %}
@@ -256,7 +256,7 @@
 </div><!-- /.modal -->
         </div>
         {% if not HIDE_SIDEBAR or ABOUT_ME %}
-        <div class="col-xl-3 col-lg-2 col-md-3" id="sidebar">
+        <div class="col-xl-3 col-lg-4 col-md-6" id="sidebar">
             <aside>
             {% if not HIDE_SIDEBAR %}
                 {% include 'includes/sidebar.html' %}
@@ -300,7 +300,7 @@
         $.material.init();
         $("div.navbar").autoHidingNavbar();
         $(".img-responsive").css("cursor","pointer").on('click',function(){
-            var sr=$(this).attr('src'); 
+            var sr=$(this).attr('src');
             $('#mimg').attr('src',sr);
             $('#myModal').modal('show');
         });
@@ -312,8 +312,8 @@
                 return $('#sidebar').height() - $('#affix-toc').height();
             },
             bottom: function (){
-                return $("#fcfooter").offset().top - 
-                    $("#article-content").offset().top - 
+                return $("#fcfooter").offset().top -
+                    $("#article-content").offset().top -
                     $("#article-content").height() + 60;
             }
           }
