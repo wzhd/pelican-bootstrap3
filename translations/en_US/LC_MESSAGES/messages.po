@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-02-24 04:52+0900\n"
+"POT-Creation-Date: 2015-03-01 01:01+0900\n"
 "PO-Revision-Date: 2014-12-10 19:24+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
@@ -131,10 +131,6 @@ msgstr ""
 msgid "and"
 msgstr ""
 
-#: templates/includes/footer.html:22
-msgid "Top"
-msgstr "Top"
-
 #: templates/includes/github.html:4
 msgid "GitHub Repos"
 msgstr ""
@@ -155,4 +151,7 @@ msgstr ""
 
 #~ msgid "Source Code"
 #~ msgstr ""
+
+#~ msgid "Top"
+#~ msgstr "Top"
 

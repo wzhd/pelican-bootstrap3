@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-02-24 04:52+0900\n"
+"POT-Creation-Date: 2015-03-01 01:01+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -129,10 +129,6 @@ msgstr ""
 
 #: templates/includes/footer.html:15
 msgid "and"
-msgstr ""
-
-#: templates/includes/footer.html:22
-msgid "Top"
 msgstr ""
 
 #: templates/includes/github.html:4

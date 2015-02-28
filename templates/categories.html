@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-    <section id="categories">
+    <section id="categories" class="well">
         <h1>{% trans %}All Categories for {{ SITENAME }}{% endtrans %}</h1>
         <div class="panel-group" id="accordion">
             {% for category, articles in categories %}

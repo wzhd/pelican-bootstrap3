@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    <section id="content">
+    <section id="content" class="well">
         <h1>{% trans %}Archives for {{ SITENAME }}{% endtrans %} <span class="badge"> {{ dates | count }}</span></h1>
         <div id="archives">
             {% for article in dates %}

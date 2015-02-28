@@ -7,7 +7,7 @@
          {% else %}
             {% set copy_date = '' %}
          {% endif %}
-         <div class="col-md-20 col-sm-18">&copy; {{ copy_date }} {{ AUTHOR }}
+         <div class="col-md-24">&copy; {{ copy_date }} {{ AUTHOR }}
             &middot; {% trans %}Powered by{% endtrans %}
             <a href="http://fezvrasta.github.io/bootstrap-material-design/" target="_blank">bootstrap-material-design</a>,
             <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
@@ -19,7 +19,7 @@
               <p><small>{{ cc_license_mark(cc_name=CC_LICENSE,derivatives=CC_LICENSE_DERIVATIVES,commercial=CC_LICENSE_COMMERCIAL,attr_markup=CC_ATTR_MARKUP,attr_props={'title':SITENAME,'name':article.author if article else AUTHOR,'url':SITEURL}) }}</small></p>
             {% endif %}
          </div>
-         <div class="col-md-4 col-sm-6"><p class="pull-right"><a href="#" class="btn btn-primary"><i class="fa fa-arrow-up"></i>{% trans %}Top{% endtrans %}</a></p></div>
       </div>
    </div>
+   <a href="#" class="btn btn-primary btn-fab btn-raised mdi-editor-vertical-align-top withripple" style="position:fixed;bottom:20px;right:20px"><div class="ripple-wrapper"></div></a>
 </footer>

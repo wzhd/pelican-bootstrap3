@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-    <section id="tags">
+    <section id="tags" class="well">
         <h1>{% trans %}Tags for {{ SITENAME }}{% endtrans %}</h1>
         <div class="panel-group" id="accordion">
             {%- for tag, articles in tags|sort %}
