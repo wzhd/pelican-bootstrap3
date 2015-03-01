@@ -30,7 +30,7 @@
 
 
     {% if WEIBO_APPKEY %}
-    <wb:share-button appkey="{{ WEIBO_APPKEY }}" addition="number" type="button" language="zh_tw" picture_search="false" ralateUid="1862842353" default_text="{{article.title}}"  pic="{{SITEURL}}/{{article.slug}}.png"></wb:share-button>
+    <wb:share-button appkey="{{ WEIBO_APPKEY }}" addition="number" type="button" language="zh_tw" picture_search="false" ralateUid="1862842353" default_text="「{{article.title}}」{{article.summary|striptags}}"  pic="http%3A{{SITEURL|urlencode}}%2F{{article.slug}}.png"></wb:share-button>
     {% endif %}
 
 </div><!-- /.post-info -->
