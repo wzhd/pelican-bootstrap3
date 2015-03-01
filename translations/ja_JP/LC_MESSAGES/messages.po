@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-01 03:45+0900\n"
+"POT-Creation-Date: 2015-03-01 12:19+0900\n"
 "PO-Revision-Date: 2014-12-10 19:22+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -123,13 +123,13 @@ msgstr "%(SITENAME)s　のタグ一覧"
 msgid "About %(AUTHOR)s"
 msgstr "%(AUTHOR)s に連絡"
 
-#: templates/includes/footer.html:11
+#: templates/includes/footer.html:13
 msgid "Powered by"
-msgstr "このブログは次の技術で作られる："
+msgstr "ここは"
 
-#: templates/includes/footer.html:15
-msgid "and"
-msgstr "及び"
+#: templates/includes/footer.html:14
+msgid "generator"
+msgstr "で生成する"
 
 #: templates/includes/github.html:4
 msgid "GitHub Repos"
@@ -145,4 +145,10 @@ msgstr "ツイート"
 
 #~ msgid "Top"
 #~ msgstr "戻る"
+
+#~ msgid "and"
+#~ msgstr "及び"
+
+#~ msgid " generator "
+#~ msgstr ""
 

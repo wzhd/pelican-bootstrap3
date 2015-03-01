@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-01 03:45+0900\n"
+"POT-Creation-Date: 2015-03-01 12:19+0900\n"
 "PO-Revision-Date: 2014-12-10 19:25+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_HK <LL@li.org>\n"
@@ -123,13 +123,13 @@ msgstr "%(SITENAME)s 的全部标签"
 msgid "About %(AUTHOR)s"
 msgstr "关于 %(AUTHOR)s"
 
-#: templates/includes/footer.html:11
+#: templates/includes/footer.html:13
 msgid "Powered by"
-msgstr "这些开源技术驱动："
+msgstr "通过"
 
-#: templates/includes/footer.html:15
-msgid "and"
-msgstr "以及"
+#: templates/includes/footer.html:14
+msgid "generator"
+msgstr "生成"
 
 #: templates/includes/github.html:4
 msgid "GitHub Repos"
@@ -145,4 +145,7 @@ msgstr "最新推文"
 
 #~ msgid "Top"
 #~ msgstr "回页首"
+
+#~ msgid "and"
+#~ msgstr "以及"
 
