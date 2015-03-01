@@ -59,6 +59,10 @@
 
     {# Twitter Cards tags #}
     {% include 'includes/twitter_cards.html' %}
+    
+    {% if WEIBO_APPKEY %}
+    <meta property="wb:webmaster" content="a699edf35652cd85" />
+    {% endif %}
 
     <!-- Bootstrap -->
     {% if USE_LESS %}
