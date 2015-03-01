@@ -42,6 +42,9 @@
         {% elif OPEN_GRAPH_IMAGE %}
             <meta property="og:image"
                   content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}"/>
+        {% else %}
+        <meta property="og:image"
+                  content="{{ SITEURL }}/{{ article.slug }}.png"/>
         {% endif %}
     {% endif %}
 {% endblock %}
