@@ -142,7 +142,7 @@
             </div>
 
             {% if article.series %}
-            <div class="panel panel-default">
+            <div class="panel panel-default" id="series">
                 <div class="panel-heading">
                   <h4>
                   {% trans index=article.series.index, name=article.series.name %}This is part {{ index }} of the "{{ name }}" series:{% endtrans %}

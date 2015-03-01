@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-01 12:19+0900\n"
+"POT-Creation-Date: 2015-03-01 17:20+0900\n"
 "PO-Revision-Date: 2014-12-10 19:22+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -141,6 +141,11 @@ msgstr "友達リンク"
 
 #: templates/includes/twitter_timeline.html:4
 msgid "Latest Tweets"
+msgstr "ツイート"
+
+#: templates/includes/weibo.html:4
+#, fuzzy
+msgid "Latest Weibo"
 msgstr "ツイート"
 
 #~ msgid "Top"
