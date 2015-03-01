@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-01 17:20+0900\n"
+"POT-Creation-Date: 2015-03-01 19:02+0900\n"
 "PO-Revision-Date: 2014-12-10 19:24+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
@@ -123,6 +123,14 @@ msgstr ""
 msgid "About %(AUTHOR)s"
 msgstr "About %(AUTHOR)s"
 
+#: templates/includes/article_info.html:25
+msgid "Show pdf version of this page"
+msgstr ""
+
+#: templates/includes/article_info.html:26
+msgid "Show captured png of this page"
+msgstr ""
+
 #: templates/includes/footer.html:13
 msgid "Powered by"
 msgstr ""
@@ -163,5 +171,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid " generator "
+#~ msgstr ""
+
+#~ msgid "Show captured pngof this page"
 #~ msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-01 17:20+0900\n"
+"POT-Creation-Date: 2015-03-01 19:02+0900\n"
 "PO-Revision-Date: 2014-12-10 19:22+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -122,6 +122,14 @@ msgstr "%(SITENAME)s　のタグ一覧"
 #, python-format
 msgid "About %(AUTHOR)s"
 msgstr "%(AUTHOR)s に連絡"
+
+#: templates/includes/article_info.html:25
+msgid "Show pdf version of this page"
+msgstr "このページの印刷版PDFファイルを表示する"
+
+#: templates/includes/article_info.html:26
+msgid "Show captured png of this page"
+msgstr "このページのスクリーンショットPNGファイルを表示する"
 
 #: templates/includes/footer.html:13
 msgid "Powered by"
