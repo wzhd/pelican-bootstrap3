@@ -2,14 +2,14 @@
 <section class="comments well" id="comments">
     <ul class="nav nav-tabs" style="margin-bottom: 15px;">
         {% if DISQUS_SITENAME %}
-        <li class="active"><a href="#disqus-comments" data-toggle="tab"><i class="fa fa-comments-o"></i>Disqus {% trans %}comments{% endtrans %}</a></li>
+        <li class="active"><a href="#disqus-comments" data-toggle="tab"><i class="fa fa-comments-o"></i> Disqus {% trans %}comments{% endtrans %}</a></li>
         {% endif %}
 
         {% if WEIBO_APPKEY %}
-        <li><a href="#weibo-comments" data-toggle="tab"><i class="fa fa-weibo"></i>Weibo {% trans %}comments{% endtrans %}</a></li>
+        <li><a href="#weibo-comments" data-toggle="tab"><i class="fa fa-weibo"></i> Weibo {% trans %}comments{% endtrans %}</a></li>
         {% endif %}
 
-        <li><a href="#gplus-comments" data-toggle="tab"><i class="fa fa-google-plus"></i>Google+ {%trans %}comments{% endtrans %}</a></li>
+        <li><a href="#gplus-comments" data-toggle="tab"><i class="fa fa-google-plus"></i> Google+ {%trans %}comments{% endtrans %}</a></li>
     </ul>
     <div id="myTabContent" class="tab-content">
         {% if DISQUS_SITENAME %}
@@ -56,7 +56,6 @@
 
         {% if WEIBO_APPKEY %}
         <div class="tab-pane fade" id="weibo-comments">
-
             <wb:comments url="auto" width="auto" language="zh_tw" appkey="WEIBO_APPKEYN" ></wb:comments>
         </div>
         {% endif %}
