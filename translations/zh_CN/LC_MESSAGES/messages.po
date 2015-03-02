@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-02 21:39+0900\n"
+"POT-Creation-Date: 2015-03-02 23:28+0900\n"
 "PO-Revision-Date: 2014-12-10 19:25+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_HK <LL@li.org>\n"
@@ -130,6 +130,11 @@ msgstr "显示这篇文章的印刷版PDF文件"
 #: templates/includes/article_info.html:26
 msgid "Show captured png of this page"
 msgstr "显示这篇文章的截图PNG文件"
+
+#: templates/includes/comments.html:5 templates/includes/comments.html:9
+#: templates/includes/comments.html:12
+msgid "comments"
+msgstr "留言"
 
 #: templates/includes/footer.html:13
 msgid "Powered by"
