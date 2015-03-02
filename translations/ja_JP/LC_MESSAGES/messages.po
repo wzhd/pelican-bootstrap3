@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-01 21:31+0900\n"
+"POT-Creation-Date: 2015-03-02 16:31+0900\n"
 "PO-Revision-Date: 2014-12-10 19:22+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -31,16 +31,16 @@ msgstr "文章一覧"
 msgid "Archives for %(SITENAME)s"
 msgstr "%(SITENAME)s　の文章一覧"
 
-#: templates/article.html:74 templates/article.html:107
+#: templates/article.html:77 templates/article.html:110
 msgid "Table of Contents"
 msgstr "目次"
 
-#: templates/article.html:93
+#: templates/article.html:96
 #, python-format
 msgid "Permalink to %(title)s"
 msgstr "%(title)s　へのパーマリンク"
 
-#: templates/article.html:148
+#: templates/article.html:151
 #, python-format
 msgid "This is part %(index)s of the \"%(name)s\" series:"
 msgstr "この文章は \"%(name)s\"　シリーズの %(index)s 番目の文章："
@@ -55,15 +55,15 @@ msgstr "%(author)s が書いた文章 - %(SITENAME)s"
 msgid "Authors - %(SITENAME)s"
 msgstr "著者一覧 - %(SITENAME)s"
 
-#: templates/base.html:111
+#: templates/base.html:115
 msgid "Toggle navigation"
 msgstr "ナビの切り替え"
 
-#: templates/base.html:207 templates/base.html:217 templates/search.html:4
+#: templates/base.html:211 templates/base.html:221 templates/search.html:4
 msgid "Search"
 msgstr "検索"
 
-#: templates/base.html:224
+#: templates/base.html:228
 msgid "All"
 msgstr "一覧"
 

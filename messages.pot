@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-01 21:31+0900\n"
+"POT-Creation-Date: 2015-03-02 16:31+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,16 +31,16 @@ msgstr ""
 msgid "Archives for %(SITENAME)s"
 msgstr ""
 
-#: templates/article.html:74 templates/article.html:107
+#: templates/article.html:77 templates/article.html:110
 msgid "Table of Contents"
 msgstr ""
 
-#: templates/article.html:93
+#: templates/article.html:96
 #, python-format
 msgid "Permalink to %(title)s"
 msgstr ""
 
-#: templates/article.html:148
+#: templates/article.html:151
 #, python-format
 msgid "This is part %(index)s of the \"%(name)s\" series:"
 msgstr ""
@@ -55,15 +55,15 @@ msgstr ""
 msgid "Authors - %(SITENAME)s"
 msgstr ""
 
-#: templates/base.html:111
+#: templates/base.html:115
 msgid "Toggle navigation"
 msgstr ""
 
-#: templates/base.html:207 templates/base.html:217 templates/search.html:4
+#: templates/base.html:211 templates/base.html:221 templates/search.html:4
 msgid "Search"
 msgstr ""
 
-#: templates/base.html:224
+#: templates/base.html:228
 msgid "All"
 msgstr ""
 

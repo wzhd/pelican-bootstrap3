@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-01 21:31+0900\n"
+"POT-Creation-Date: 2015-03-02 16:31+0900\n"
 "PO-Revision-Date: 2014-12-10 19:25+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_HK <LL@li.org>\n"
@@ -31,16 +31,16 @@ msgstr "歸檔"
 msgid "Archives for %(SITENAME)s"
 msgstr "%(SITENAME)s 的歸檔"
 
-#: templates/article.html:74 templates/article.html:107
+#: templates/article.html:77 templates/article.html:110
 msgid "Table of Contents"
 msgstr "目錄"
 
-#: templates/article.html:93
+#: templates/article.html:96
 #, python-format
 msgid "Permalink to %(title)s"
 msgstr "到 %(title)s 的永久鏈接"
 
-#: templates/article.html:148
+#: templates/article.html:151
 #, python-format
 msgid "This is part %(index)s of the \"%(name)s\" series:"
 msgstr "這篇文章是 \"%(name)s\" 系列文章的第 %(index)s 篇："
@@ -55,15 +55,15 @@ msgstr "%(author)s 撰寫的文章 - %(SITENAME)s"
 msgid "Authors - %(SITENAME)s"
 msgstr "作者 - %(SITENAME)s"
 
-#: templates/base.html:111
+#: templates/base.html:115
 msgid "Toggle navigation"
 msgstr "切換導航"
 
-#: templates/base.html:207 templates/base.html:217 templates/search.html:4
+#: templates/base.html:211 templates/base.html:221 templates/search.html:4
 msgid "Search"
 msgstr "搜索"
 
-#: templates/base.html:224
+#: templates/base.html:228
 msgid "All"
 msgstr "歸檔"
 
