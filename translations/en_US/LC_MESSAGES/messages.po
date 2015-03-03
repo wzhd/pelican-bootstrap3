@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-02 16:31+0900\n"
+"POT-Creation-Date: 2015-03-03 14:02+0900\n"
 "PO-Revision-Date: 2014-12-10 19:24+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
@@ -129,6 +129,11 @@ msgstr ""
 
 #: templates/includes/article_info.html:26
 msgid "Show captured png of this page"
+msgstr ""
+
+#: templates/includes/comments.html:5 templates/includes/comments.html:9
+#: templates/includes/comments.html:12
+msgid "comments"
 msgstr ""
 
 #: templates/includes/footer.html:13
