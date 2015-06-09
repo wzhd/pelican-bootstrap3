@@ -1,4 +1,4 @@
-langs = "en_US,ja_JP,zh_HK,zh_CN".split(',')
+langs = "en_GB,ja_JP,zh_TW,zh_CN".split(',')
 
 trans_source = map(lambda x: 'translations/'+x+'/LC_MESSAGES/messages.po', langs)
 trans_target = list(map(lambda x: x[:-2]+"mo", trans_source))
