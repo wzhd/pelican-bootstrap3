@@ -94,10 +94,6 @@ msgstr ""
 msgid "Atom feeds for all articles"
 msgstr "Atom feeds for all articles"
 
-#: templates/page.html:59 templates/includes/article_info.html:24
-msgid "Show source code of this page"
-msgstr ""
-
 #: templates/tag.html:11 templates/tags.html:8
 #: templates/includes/sidebar_tags.html:3
 msgid "Tags"
@@ -122,14 +118,6 @@ msgstr ""
 #, python-format
 msgid "About %(AUTHOR)s"
 msgstr "About %(AUTHOR)s"
-
-#: templates/includes/article_info.html:25
-msgid "Show pdf version of this page"
-msgstr ""
-
-#: templates/includes/article_info.html:26
-msgid "Show captured png of this page"
-msgstr ""
 
 #: templates/includes/comments.html:8 templates/includes/comments.html:60
 #: templates/includes/comments.html:75

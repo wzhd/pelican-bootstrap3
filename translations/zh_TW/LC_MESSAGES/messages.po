@@ -94,10 +94,6 @@ msgstr "全部文章"
 msgid "Atom feeds for all articles"
 msgstr "訂閱全部文章"
 
-#: templates/page.html:59 templates/includes/article_info.html:24
-msgid "Show source code of this page"
-msgstr "顯示這篇文章的源文件"
-
 #: templates/tag.html:11 templates/tags.html:8
 #: templates/includes/sidebar_tags.html:3
 msgid "Tags"
@@ -122,14 +118,6 @@ msgstr "%(SITENAME)s 的全部標籤"
 #, python-format
 msgid "About %(AUTHOR)s"
 msgstr "關於 %(AUTHOR)s"
-
-#: templates/includes/article_info.html:25
-msgid "Show pdf version of this page"
-msgstr "顯示這篇文章的印刷版PDF文件"
-
-#: templates/includes/article_info.html:26
-msgid "Show captured png of this page"
-msgstr "顯示這篇文章的截圖PNG文件"
 
 #: templates/includes/comments.html:8 templates/includes/comments.html:60
 #: templates/includes/comments.html:75

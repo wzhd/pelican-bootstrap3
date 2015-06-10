@@ -94,10 +94,6 @@ msgstr "文章の一覧"
 msgid "Atom feeds for all articles"
 msgstr "全ての文章のフィード"
 
-#: templates/page.html:59 templates/includes/article_info.html:24
-msgid "Show source code of this page"
-msgstr "このページのソースコードを表示する"
-
 #: templates/tag.html:11 templates/tags.html:8
 #: templates/includes/sidebar_tags.html:3
 msgid "Tags"
@@ -122,14 +118,6 @@ msgstr "%(SITENAME)s　のタグ一覧"
 #, python-format
 msgid "About %(AUTHOR)s"
 msgstr "%(AUTHOR)s に連絡"
-
-#: templates/includes/article_info.html:25
-msgid "Show pdf version of this page"
-msgstr "このページの印刷版PDFファイルを表示する"
-
-#: templates/includes/article_info.html:26
-msgid "Show captured png of this page"
-msgstr "このページのスクリーンショットPNGファイルを表示する"
 
 #: templates/includes/comments.html:8 templates/includes/comments.html:60
 #: templates/includes/comments.html:75
